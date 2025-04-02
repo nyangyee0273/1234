@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js 수업</title>
+    <style>
+        .leader {
+            color: red;
+
+        }
+        .team1 {
+            background-color: skyblue;
+
+        }
+        .team2{
+            background-color: salmon;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="team1">
+        <h1>민서네 팀</h1>
+        <ul>
+            <li class="leader" id="team1_leader">노상방뇨</li>
+            <li>만득아달려</li>
+            <li>요아정</li>
+            <li>4별비</li>
+            <li>허혁여친</li>
+        </ul>
+    </div>
+
+    <div class="team2">
+        <h1>은혁이네 팀</h1>
+        <ul>
+            <li class="leader" id="team2_leader">장래희망개구리</li>
+            <li>왕사마귀</li>
+            <li>메건</li>
+            <li>TAE Wvy</li>
+            <li>홍민경</li>
+        </ul>
+    </div>
+    <script>
+        let team1_Select
+        team1_Select = document.querySelector(".team1")
+        team1_Select.style.color = "blue"
+        team1_Select.style.width = "300px"
+        team1_Select.style.height = "300px"
+
+        console.log(team1_Select)
+        
+        let team2_Select
+        team2_Select = document.querySelector(".team2")
+        team2_Select.style.color = "white"
+        team2_Select.style.width = "300px"
+        team2_Select.style.height = "300px"
+
+        console.log(team2_Select)
+
+        let team1_leader_Select
+        team1_leader_Select = document.querySelector("#team1_leader")
+        team1_leader_Select.style.backgroundColor = "green"
+
+        console.log(team1_leader_Select)
+        
+        let team2_leader_Select
+        team2_leader_Select = document.querySelector("#team2_leader")
+        team2_leader_Select.style.backgroundColor = "blue"
+
+        console.log(team2_leader_Select)
+    </script>
+</body>
+</html>
