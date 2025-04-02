@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 수업 2</title>
+</head>
+<body>
+
+
+    <script>
+        let my_height = 180
+        let my_average_weight = (my_height - 100) * 0.9
+        console.log(my_average_weight)
+
+        male_average_weight_calculate(180)
+        female_average_weight_calculate(180)
+
+        function male_average_weight_calculate (input_height) {
+            let height = input_height
+            let average_weight = (height - 100) * 0.9
+            console.log(average_weight)
+        }
+
+        function female_average_weight_calculate (input_height) {
+            let height = input_height
+            let average_weight = (height - 100) * 0.85
+            console.log(average_weight)
+        }
+    </script>
+</body>
+</html>
