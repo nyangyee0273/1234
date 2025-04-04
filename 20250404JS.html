@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="team1">민서네</h1>
+    <h1 class="team2">태준이네</h1>
+
+    <script>
+        let team1
+        team1 = document.querySelector(".team1")
+
+        let team2
+        team2 = document.querySelector(".team2")
+
+        team1.style.color = "pink"
+        team1.style.backgroundColor = "green"
+        team1.textContent = "민서 : 레오나"
+
+        team2.style.color = "aquamarine"
+        team2.style.backgroundColor = "pink"
+        team2.textContent = "태준 : 사일러스"
+
+        /* 대상 addEventListener(이벤트종류, 코드들) */
+        team1.addEventListener("click", function() {
+            alert("잘못된 접근입니다.")
+            console.log("민서네팀 클릭했습니다.")
+        })
+
+        team1.addEventListener("mouseover", function () {
+            team1.style.color = "white"
+        })
+
+        team1.addEventListener("mouseout", function () {
+            team1.style.color = "orange"
+        })
+
+        team2.addEventListener("mousedown", function () {
+            team2.style.backgroundColor = "purple"
+        })
+
+        team2.addEventListener("mouseup", function () {
+            team2.style.backgroundColor = "hotpink"
+        })
+    </script>
+</body>
+</html>
