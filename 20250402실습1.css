@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Ownglyph_corncorn-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2412-1@1.0/Ownglyph_corncorn-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#head {
+    border: 1px solid black;
+    width: 50%;
+    text-align: center;
+    font-family: 'Ownglyph_corncorn-Rg';
+    font-size: 50px;
+    color: white;
+}
+
+.a1 {
+    text-shadow: 2px 2px black;
+}
+
+.list {
+    font-style: italic;
+    font-size: 20px;
+    line-height: 40px;
+}
