@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js 4회차</title>
+</head>
+<body>
+    <script>
+        let hp = 650;
+        hp += 100
+        console.log(hp)
+
+        let atk = 80
+        atk += 50
+        console.log(atk)
+
+        let speed = 300
+        speed *= 1.2
+        console.log(speed)
+
+        let kill = 0
+        kill += 1
+        console.log(kill)
+
+        let death = 0
+        death += 1
+        console.log(death)
+
+        let assist = 0
+        assist++
+        console.log(assist)
+
+        for (let i = 0; i < 10; i++) { // ~인 동안 코드 반복
+            load_game()
+        }
+
+        function load_game (game_Num) {
+            console.log(`${game_Num}번 게임 불러오기`)
+        }
+    </script>
+</body>
+</html>
