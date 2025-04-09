@@ -31,12 +31,28 @@
         assist++
         console.log(assist)
 
-        for (let i = 0; i < 10; i++) { // ~인 동안 코드 반복
+        // ~인 동안 코드 반복
+        for (let i = 0; i < 10; i++) { 
             load_game()
         }
 
         function load_game (game_Num) {
             console.log(`${game_Num}번 게임 불러오기`)
+        }
+
+        let team1 = ["진은혁", "오정균", "최명우"]
+        console.log(team1[0])
+        console.log(team1[1])
+        console.log(team1[2])
+
+        for (let human in team1) {
+            console.log(`${human}: ${team1[human]}`)
+        }
+
+        // while : ~ 인 동안
+        let team1_human = 3
+        while (team1_human > 1) {
+            console.log("while문 실행")
         }
     </script>
 </body>
