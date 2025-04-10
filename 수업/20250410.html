@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 4회차</title>
+    <style>
+        table {
+            border-collapse: collapse;
+
+            border-spacing: 20px 10px; 
+        }
+    </style>
+</head>
+<body>
+    <table border="foo">
+        <thead>
+            <caption>캡션: 설명이라는 뜻</caption>
+
+            <colgroup>
+                <col style="width: 100px;">
+                <col style="background-color: blue;">
+                <col style="width:150px; background-color:red;">
+                <col style="background-color: brown;">
+            </colgroup>
+
+            <tr>
+                <th>1칸</th>
+                <td>2칸</td>
+                <td>3칸</td>
+                <td>4칸</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1칸</td>
+                <td>2칸</td>
+                <td colspan="2">3칸</td>
+            </tr>
+
+            <tr>
+                <td>1칸</td>
+                <td rowspan="2">2칸</td>
+                <td>3칸</td>
+                <td>4칸</td>
+            </tr>
+
+            <tr>
+                <td>1칸</td>
+                <td>2칸</td>
+                <td>3칸</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>1칸</td>
+                <td>2칸</td>
+                <td>3칸</td>
+                <td>4칸</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
