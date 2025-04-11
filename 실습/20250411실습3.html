@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 5회차 실습3</title>
+</head>
+<body>
+    <h1>BMI 테스트</h1>
+
+    <label>키 <input type="number" id="height"></label>
+
+    <br>
+    <br>
+
+    <label>체중 <input type="number" id="weight"></label>
+
+    <br>
+    <br>
+
+    <button id="button">계산</button>
+
+    <hr>
+
+    <h1 id="bmi1">BMI 수치 :</h1>
+    <h1 id="bmi2"></h1>
+
+    <script>
+        const height = document.querySelector("#height")
+        const weight = document.querySelector("#weight")
+        const button = document.querySelector("#button")
+        const bmi1 = document.querySelector("#bmi1")
+        const bmi2 = document.querySelector("#bmi2")
+
+        let bmi_calculate = weight.value / ((height.value / 100) ** 2)
+
+        let asdf = 0
+        if (bmi_calculate < 18.5) or (bmi_calculate > 22.9); {
+            asdf = "비정상 범위";
+        } if (18.5 <= bmi_calculate <= 22.9); {
+            asdf = " 정상 범위";
+        }
+
+        button.addEventListener("click", function () {
+            bmi1.textContent = `BMI 수치: ${weight.value / ((height.value / 100) * (height.value / 100))}`
+            bmi2.textContent = `${asdf}`
+        })
+    </script>
+</body>
+</html>

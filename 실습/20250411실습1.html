@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 5회차 실습1</title>
+    <style>
+        button {
+            color: white;
+            background-color: blue;
+            border: none;
+            border-radius: 10px;
+            width: 200px;
+            height: 50px;
+            margin: 20px;
+            font-size: 40px;
+        }
+
+        img {
+            width: 40%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>버튼 클릭에 따른 이미지 슬라이드</h1>
+
+    <button class="button1">1</button>
+    <button class="button2">2</button>
+    <button class="button3">3</button>
+
+    <br>
+
+    <img class="img" src="https://i.namu.wiki/i/iCk1NA9cI1omYpZirsAjtv6yHzUHc_CFn7rb4ko0P_DMkSavEGvmi5AlWnJE04Umt5WH1iFy_sM4fm7hgHfSPQ.webp" alt="">
+
+    <script>
+        let button1 = document.querySelector(".button1")
+        let button2 = document.querySelector(".button2")
+        let button3 = document.querySelector(".button3")
+
+        let img = document.querySelector(".img")
+
+        button1.addEventListener("click", function () {
+            img.setAttribute("src", "https://i.namu.wiki/i/iCk1NA9cI1omYpZirsAjtv6yHzUHc_CFn7rb4ko0P_DMkSavEGvmi5AlWnJE04Umt5WH1iFy_sM4fm7hgHfSPQ.webp")
+        })
+
+        button2.addEventListener("click", function () {
+            img.setAttribute("src", "https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/134065.jpg")
+        })
+
+        button3.addEventListener("click", function () {
+            img.setAttribute("src", "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/3ebb81d7fa8e0348c35eebe31d3ef82817a0b6a0-1920x1133.jpg")
+        })
+    </script>
+</body>
+</html>

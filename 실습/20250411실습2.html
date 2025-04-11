@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 5회차 실습2</title>
+</head>
+<body>
+    <h1>IQ 테스트</h1>
+
+    <label>이름 <input type="text" id="name"></label>
+
+    <br>
+    <br>
+
+    <label>나이 <input type="number" id="age"></label>
+
+    <br>
+    <br>
+
+    <label>성별 <input type="text" id="gender"></label>
+
+    <br>
+    <br>
+
+    <button id="button">제출</button>
+
+    <script>
+        const name = document.querySelector("#name")
+        const gender = document.querySelector("#gender")
+        const age = document.querySelector("#age")
+        const asdf = document.querySelector("#button")
+
+        asdf.addEventListener("click", function () {
+            alert(`${name.value}님, ${age.value}살에 ${gender.value} 맞습니까?`)
+        })
+    </script>
+</body>
+</html>
