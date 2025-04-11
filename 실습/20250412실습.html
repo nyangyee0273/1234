@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 5회차 실습1</title>
+    <style>
+        legend {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        #label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>회원가입 페이지</legend>
+            <h1>로그인 정보</h1>
+            <label id="label">ID 입력<input type="text" placeholder="최대 10자"></label>
+
+            <br>
+
+            <label id="label">비밀번호<input type="password" placeholder="영어, 숫자 섞어서"></label>
+            <label id="label">비밀번호 확인<input type="password" placeholder="영어, 숫자 섞어서"></label>
+
+            <hr>
+
+            <h1>개인정보</h1>
+
+            <h4>주소</h4>
+
+            <input type="text">
+
+            <br>
+
+            <h4>연령대</h4>
+
+            <label><input type="radio" id="10~19" name="age" value="teen">10~19</label>
+
+            <label><input type="radio" id="20~29" name="age" value="twenty">20~29</label>
+
+            <label><input type="radio" id="30~39" name="age" value="thirty">30~39</label>
+
+            <label><input type="radio" id="40~49" name="age" value="forty">40~49</label>
+
+            <label><input type="radio" id="50_above" name="age" value="fifty">50~<label>
+
+            <br>
+
+            <h4>성별</h4>
+
+            <label><input type="radio" id="male" name="gender" value="male">남성</label>
+
+            <label><input type="radio" id="female" name="gender" value="female">여성</label>
+
+            <label><input type="radio" id="other" name="gender" value="other">기타</label>
+
+            <label><input type="radio" id="undisclosed" name="gender" value="undisclosed">공개하지 않음</label>
+
+            <br>
+
+            <h4>취미</h4>
+
+            <label><input type="checkbox" id="game" name="hobby" value="game">게임</label>
+
+            <label><input type="checkbox" id="youtube" name="hobby" value="youtube">유튜브</label>
+
+            <label><input type="checkbox" id="music" name="hobby" value="music">음악</label>
+
+            <label><input type="checkbox" id="exercise" name="hobby" value="exercise">운동</label>
+
+            <label><input type="checkbox" id="read" name="hobby" value="read">독서</label>
+
+            <label><input type="checkbox" id="travel" name="hobby" value="travel">여행</label>
+
+            <label><input type="checkbox" id="create" name="hobby" value="create">창작</label>
+
+            <br>
+            <br>
+
+            <hr>
+
+            <button type="submit">회원가입</button>
+            <button type="reset">다시 입력</button>
+        </fieldset>
+    </form>
+</body>
+</html>
