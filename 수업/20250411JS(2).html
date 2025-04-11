@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 5회차 수업</title>
+</head>
+<body>
+    <h1>영혼의 꽃 킨드레드</h1>
+
+    <img id="kindred" src="https://i.namu.wiki/i/iCk1NA9cI1omYpZirsAjtv6yHzUHc_CFn7rb4ko0P_DMkSavEGvmi5AlWnJE04Umt5WH1iFy_sM4fm7hgHfSPQ.webp" alt="">
+
+    <script>
+        let img = document.querySelector("#kindred")
+        console.log(img)
+
+        img.setAttribute("src", "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/3ebb81d7fa8e0348c35eebe31d3ef82817a0b6a0-1920x1133.jpg")
+
+        img.addEventListener("click", function () {
+            console.log("킨드의 아름다움을")
+            alert("당신도 알게되었군요")
+        })
+    </script>
+</body>
+</html>
