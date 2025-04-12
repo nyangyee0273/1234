@@ -9,6 +9,19 @@
             width:300px;
             font-size: 20pt;
         }
+
+        table {
+            width: 45%;
+            height: 300px;
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        th {
+            border: 1px solid black;
+            font-size: 20pt;
+        }
     </style>
 </head>
 <body>
@@ -17,17 +30,28 @@
     <button class="button1">술래잡기 시작</button>
     <button class="button2">술래잡기 정지</button>
 
-    <tr>
-        <td>
-            박스1
-            <img src="" alt="">
-        </td>
-        <td>
+    <br>
+    <br>
 
-        </td>
-        <td>
+    <table>
+        <colgroup>
+            <col width="15%">
+            <col width="15%">
+            <col width="15%">
+        </colgroup>
+        <tr>
+            <th>
+                박스1
+                <img src="" alt="">
+            </th>
+            <th>
+                박스2
+            </th>
+            <th>
+                박스3
 
-        </td>
-    </tr>
+            </th>
+        </tr>
+    </table>
 </body>
 </html>
