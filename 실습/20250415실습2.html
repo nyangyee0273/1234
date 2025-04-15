@@ -64,20 +64,15 @@
                 <h4>연령대</h4>
 
                 <label>
-                    <input type="radio" name="age" id="teen" value="teen">
-                    <label for="teen">10대</label>
+                    <label><input type="radio" id="10~19" name="age" value="teen">10~19</label>
 
-                    <input type="radio" name="age" id="twenty" value="twenty">
-                    <label for="twenty">20대</label>
+                    <label><input type="radio" id="20~29" name="age" value="twenty">20~29</label>
 
-                    <input type="radio" name="age" id="thirty" value="thirty">
-                    <label for="thirty">30대</label>
+                    <label><input type="radio" id="30~39" name="age" value="thirty">30~39</label>
 
-                    <input type="radio" name="age" id="forty" value="forty">
-                    <label for="forty">40대</label>
+                    <label><input type="radio" id="40~49" name="age" value="forty">40~49</label>
 
-                    <input type="radio" name="age" id="fifty" value="fifty">
-                    <label for="fifty">50대 이상</label>
+                    <label><input type="radio" id="50~" name="age" value="above_fifty">50~</label>
                 </label>
 
                 <br>
@@ -85,10 +80,8 @@
                 <h4>성별</h4>
 
                 <label>
-                    <input type="radio" name="gender" id="male" value="male">
-                    <label for="male">남</label>
-                    <input type="radio" name="gender" id="female" value="female">
-                    <label for="female">여</label>
+                    <label><input type="radio" id="male" name="gender" value="male">남</label>
+                    <label><input type="radio" id="female" name="gender" value="female">여</label>
                 </label>
                 
                 <br>
@@ -96,28 +89,21 @@
                 <h4>취미</h4>
 
                 <label>
-                    <input type="checkbox" name="hobby" value="game">
-                    <label for="game">게임</label>
+                    <label><input type="checkbox" id="game" name="hobby" value="game">게임</label>
 
-                    <input type="checkbox" name="hobby" value="youtube">
-                    <label for="youtube">유튜브</label>
-
-                    <input type="checkbox" name="hobby" value="music">
-                    <label for="music">음악</label>
+                    <label><input type="checkbox" id="youtube" name="hobby" value="youtube">유튜브</label>
+                    
+                    <label><input type="checkbox" id="music" name="hobby" value="music">음악</label>
 
                     <br>
 
-                    <input type="checkbox" name="hobby" value="exercise">
-                    <label for="exercise">운동</label>
+                    <label><input type="checkbox" id="exercise" name="hobby" value="exercise">운동</label>
 
-                    <input type="checkbox" name="hobby" value="read">
-                    <label for="read">독서</label>
+                    <label><input type="checkbox" id="read" name="hobby" value="read">독서</label>
 
-                    <input type="checkbox" name="hobby" value="travel">
-                    <label for="travel">여행</label>
+                    <label><input type="checkbox" id="travel" name="hobby" value="travel">여행</label>
 
-                    <input type="checkbox" name="hobby" value="create">
-                    <label for="create">창작</label>
+                    <label><input type="checkbox" id="create" name="hobby" value="create">창작</label>
                 </label>
 
                 <br>
@@ -127,8 +113,8 @@
             <br>
 
             <div class="button">
-                <button id="sign_up">회원가입</button>
-                <button id="re">다시 입력</button>
+                <button type="submit" id="sign_up">회원가입</button>
+                <button type="reset" id="re">다시 입력</button>
             </div>
         </div>
     </form>
