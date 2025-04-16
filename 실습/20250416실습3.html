@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5회차 실습 3</title>
+    <style>
+        .button1 {
+            color: violet;
+        }
+
+        .button2 {
+            background-color: skyblue;
+        }
+
+        .button3 {
+            border: 3px dashed black;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="pretty">나를 꾸며주세요 ^^</h1>
+
+    <button class="button1">색깔 넣기</button>
+    <button class="button2">배경 넣기</button>
+    <button class="button3">테두리 넣기</button>
+
+    <script>
+        get_pretty = document.querySelector(".pretty")
+
+        button1 = document.querySelector(".button1")
+        button2 = document.querySelector(".button2")
+        button3 = document.querySelector(".button3")
+
+        button1.addEventListener ("click", function () {
+            get_pretty.classList.add("button1")
+        })
+
+        button2.addEventListener ("click", function () {
+            get_pretty.classList.add("button2")
+        })
+
+        button3.addEventListener ("click", function () {
+            get_pretty.classList.add("button3")
+        })
+    </script>
+</body>
+</html>
