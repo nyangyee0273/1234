@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        legend {
+            font-size: 50px;
+            font-weight: 700;
+        }
+
+        .label {
+            font-weight: 700;
+        }
+
+        #label {
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>회원가입 페이지</legend>
+            
+            <h1>로그인 정보</h1>
+
+            <label class="label">ID 입력 <input type="text" placeholder="최대 10자"></label>
+
+            <br>
+
+            <label><span class="label">PW 입력</span>(필수) <input type="password" placeholder="영어, 숫자 섞어서" required></label>
+
+            <br>
+
+            <label><span class="label">PW 입력확인</span>(필수) <input type="password" placeholder="영어, 숫자 섞어서" required></label>
+
+            <br>
+            <hr>
+
+            <h1>개인정보</h1>
+
+            <label class="label">
+                주소
+                <br>
+                <input type="text">
+            </label>
+
+            <br>
+
+            <label id="label">
+                <span class="label">연령대</span>
+                <br>
+                <label><input type="radio" id="10~19" name="age" value="teen">10~19</label>
+                <label><input type="radio" id="20~29" name="age" value="twenty">20~29</label>
+                <label><input type="radio" id="30~39" name="age" value="thirty">30~39</label>
+                <label><input type="radio" id="40~49" name="age" value="forty">40~49</label>
+                <label><input type="radio" id="50~" name="age" value="above_fifty">50~</label>
+            </label>
+
+            <br>
+
+            <label id="label">
+                <span class="label">성별</span>
+                <br>
+                <label><input type="radio" id="male" name="gender" value="male">남</label>
+                <label><input type="radio" id="female" name="gender" value="female">여</label>
+            </label>
+
+            <br>
+
+            <label id="label">
+                <span class="label">취미</span>
+                <br>
+                <label><input type="checkbox" id="game" name="hobby" value="game">게임</label>
+                <label><input type="checkbox" id="youtube" name="hobby" value="youtube">유튜브</label>
+                <label><input type="checkbox" id="baeksu" name="hobby" value="baeksu">잉여짓</label>
+                <label><input type="checkbox" id="exercise" name="hobby" value="exercise">운동</label>
+                <label><input type="checkbox" id="read" name="hobby" value="read">독서</label>
+                <label><input type="checkbox" id="travel" name="hobby" value="travel">여행</label>
+                <label><input type="checkbox" id="create" name="hobby" value="create">창작</label>
+            </label>
+
+            <br>
+            <br>
+
+            <label class="label">
+                이메일
+                <br>
+                <input type="email" placeholder="abcd@exsample.com">
+            </label>
+            
+            <br>
+            <br>
+
+            <label class="label">
+                연락처
+                <br>
+                <input type="tel" placeholder="000-0000-0000">
+            </label>
+            
+            <br>
+            <br>
+
+            <label class="label">
+                생년월일
+                <br>
+                <input type="date">
+            </label>
+            
+            <br>
+            <br>
+
+            <label>
+                키(최소130 최대195 기본150 단위5)
+                <input type="range" min="130" max="195" step="5" value="150">
+            </label>
+
+            <br>
+            <br>
+
+            <label>
+                사진
+                <input type="file">
+            </label>
+
+            <br>
+            <hr>
+
+            <button type="submit">회원 가입</button>
+            <button type="reset">다시 입력</button>
+        </fieldset>
+    </form>
+</body>
+</html>

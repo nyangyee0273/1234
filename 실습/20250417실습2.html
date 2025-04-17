@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>주문 페이지</h1>
+        <p>치킨 주문을 위한 페이지 입니다. 정확한 내용을 기재 바랍니다.</p>
+    </header>
+
+    <main>
+        <section>
+            <div>
+                <h2>메뉴 선택</h2>
+                <p>사진을 누르면 메뉴가 선택됨</p>
+                <label><input type="radio" id="ganjang" value="ganjang" name="chicken"><img src="" alt="">간장티꾸닭</label>
+                <label><input type="radio" id="snow_onion" value="snow_onion" name="chicken"><img src="" alt="">스노우 어니언</label>
+                <label><input type="radio" id="sauced" value="sauced" name="chicken"><img src="" alt="">양념</label>
+            </div>
+
+            <br>
+            <br>
+            <hr>
+            <br>
+            <br>
+
+            <div>
+                <h3>사이드 메뉴</h3>
+                <label><input type="checkbox"><img src="" alt=""> 치즈볼</label>
+                <label><input type="checkbox"><img src="" alt=""> 치킨무</label>
+                <label><input type="checkbox"><img src="" alt=""> 머스타드 소스</label>
+                <label><input type="checkbox"><img src="" alt=""> 칠리 소스</label>
+
+                <br>
+                <br>
+                <br>
+
+                <h3>선택 사항</h3>
+                <label><input type="checkbox"><img src="" alt=""> 비닐 장갑</label>
+                <label><input type="checkbox"><img src="" alt=""> 나무젓가락 제외</label>
+                <label><input type="checkbox"><img src="" alt=""> 치킨 무 제외</label>
+                <label><input type="checkbox"><img src="" alt=""> 소스 제외</label>
+                
+                <br>
+
+                <label>맵기(1~5)<input type="range" min="1" max="5" step="1" value="3"></label>
+
+                <br>
+
+                <label>
+                    소스양
+                    <select name="sauce" id="">
+                        <option value="many">많음</option>
+                        <option value="normal">보통</option>
+                        <option value="small">적음</option>
+                    </select>
+                </label>
+
+                <br>
+                <br>
+                <br>
+
+                <h3>기타 희망사항</h3>
+                <textarea rows="5" cols="50" style="width: 500px; height: 150px;"></textarea>
+            </div>
+        </section>
+
+        <section>
+            
+        </section>
+    </main>
+</body>
+</html>
