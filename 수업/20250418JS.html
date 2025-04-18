@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 300px;
+            background-color: aqua;
+            margin: auto;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 300px;
+            background-color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">박스1</div>
+    <div class="box2">박스2</div>
+
+    <script>
+        let new_tag = document.createElement("div")
+        console.log(new_tag)
+
+        new_tag.classList.add("box2")
+        new_tag.textContent = "새로 만든 div"
+
+        let parents = document.querySelector(".box1")
+        parents.appendChild(new_tag)
+
+        //parents.removeChild(new_tag)
+
+        let parents2 = document.querySelector(".box2")
+        parents2.appendChild(new_tag)
+    </script>
+</body>
+</html>
