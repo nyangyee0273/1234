@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_이시현</title>
+    
+    <style>
+        @font-face {
+            font-family: 'Ownglyph_corncorn-Rg';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2412-1@1.0/Ownglyph_corncorn-Rg.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            user-select: none;
+            font-family: 'Ownglyph_corncorn-Rg';
+            margin: 0% 35%;
+        }
+
+        fieldset {
+            border-radius: 20px;
+            text-align: left;
+        }
+
+        p {
+            color: darkgrey;
+        }
+
+        select {
+            border: none;
+            font-family: 'Ownglyph_corncorn-Rg';
+            font-size: 17px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            font-family: 'Ownglyph_corncorn-Rg';
+        }
+
+        button {
+            background-color: aquamarine;
+            border: none;
+            border-radius: 10px;
+            margin: 0px 11%;
+            font-family: 'Ownglyph_corncorn-Rg';
+            font-size: 20pt;
+            width: 200px;
+            height: 50px;
+        }
+
+        .head {
+            font-size: 50pt;
+        }
+
+        .color {
+            color: greenyellow;
+        }
+
+        .input {
+            border: none;
+            border-bottom:solid 1px rgb(202, 202, 202);
+            width: 150px;
+            font-family: 'Ownglyph_corncorn-Rg';
+            font-size: 16px;
+        }
+        
+        .input2 {
+            border: none;
+            border-bottom:solid 1px rgb(202, 202, 202);
+            width: 50px;
+            font-family: 'Ownglyph_corncorn-Rg';
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <FORM>
+        <h1 class="head color">회원 가입 페이지</h1>
+
+        <fieldset>
+            <h1 class="color">| 자신의 프로필을 설정해주세요</h1>
+            
+            <p>각각의 항목에 정보를 입력해주세요</p>
+
+            <hr>
+
+            <label>
+                <h4>성명</h4>
+                <input type="text" placeholder="성명 입력" class="input" required>
+            </label>
+
+            <br>
+            
+            <label>
+                <h4>주소</h4>
+                <input type="text" placeholder="주소 입력" class="input" required>
+            </label>
+
+            <br>
+
+            <label>
+                <h4>연락처</h4>
+                <input type="text" placeholder="연락처 입력" class="input" required>
+            </label>
+
+            <br>
+
+            <label>
+                <h4>생년월일</h4>
+                <select name="" id="" required>
+                    <option value="">연도</option>
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                </select>
+
+                <select name="" id="" required>
+                    <option value="">월</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                
+                <input type="num" min="1" max="31" class="input2"> 일
+            </label>
+
+            <br>
+
+            <label required>
+                <h4>성별</h4>
+                <label>
+                    <input type="radio" name="gender" id="male" value="male"> 남
+                </label>
+
+                <label>
+                    <input type="radio" name="gender" id="female" value="female"> 여
+                </label>
+            </label>
+
+            <br>
+
+            <label required>
+                <h4>이메일</h4>
+                <label>
+                    <input type="email" placeholder="이메일 입력" class="input">
+                </label>
+            </label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <h1 class="color">| 자신을 소개해 주세요</h1>
+            <p>아래의 물음에 답하세요</p>
+
+            <hr>
+
+            <label required>
+                <h4>가장 마음에 드는 문구를 고르세요</h4>
+                <label>
+                <input type="radio" name="myung-un" id="first"> 어렵게 생각하지 말고 끝까지 하면 된다. 희망을 가지고 간절하게 하면 된다.
+                </label>
+
+                <br>
+
+                <label>
+                <input type="radio" name="myung-un" id="second"> 신념을 가지면 어떤 어려움에도 흔들리지 않는다.
+                </label>
+
+                <br>
+
+                <label>
+                <input type="radio" name="myung-un" id="third"> "시계처럼 살아라" - 이는 시계처럼 꾸준히 가라는 것이다. 시계처럼 시간도 지켜라
+                </label>
+
+                <br>
+
+                <label>
+                <input type="radio" name="myung-un" id="fourth"> 인생도 건너뛰기가 없고 나는 비약도 없다.
+                </label>
+            </label>
+
+            <br>
+
+            <label required>
+                <h4>위 문구를 선택한 이유를 쓰세요</h4>
+                <textarea rows="5" cols="100" placeholder="500자 이내"></textarea>
+            </label>
+
+            <br>
+
+            <label required>
+                <h4>자신의 진로 분야를 선택하세요</h4>
+                <label>
+                <input type="checkbox" name="dream" id="front-end"> 프론트엔드 
+                </label>
+                
+                <label>
+                <input type="checkbox" name="dream" id="secrity"> 보안
+                </label>
+
+                <label>
+                <input type="checkbox" name="dream" id="back-end"> 백엔드
+                </label>
+
+                <label>
+                <input type="checkbox" name="dream" id="AI"> 인공지능
+                </label>
+
+                <label>
+                <input type="checkbox" name="dream" id="hacker"> 해커
+                </label>
+
+                <label>
+                <input type="checkbox" name="dream" id="other"> 기타
+                </label>
+            </label>
+
+            <br>
+
+            <label required>
+                <h4>개발자가 되기 위한 자신의 공부 우선 순위</h4>
+                <label>1. <input type="text" class="input"></label>
+                <label>2. <input type="text" class="input"></label>
+                <label>3. <input type="text" class="input"></label>
+            </label>
+        </fieldset>
+
+        <br>
+
+        <button type="submit">제출</button>
+        <button type="reset">초기화</button>
+
+        <br>
+        <br>
+    </FORM>
+</body>
+</html>
