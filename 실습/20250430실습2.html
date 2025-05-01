@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS 5회차 실습3</title>
+    <style>
+        h2 {
+            line-height: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>BMI 테스트</h1>
 
-    <label>키 <input type="number" id="height"></label>
+    <h2>몸무게 / (키*키)</h2>
+    <h2>키는 m 단위</h2>
+    <h2>ex) 100 / (1.8*1.8)</h2>
+
+    <label>키 <input type="text" id="height"></label>
 
     <br>
     <br>
 
-    <label>체중 <input type="number" id="weight"></label>
+    <label>체중 <input type="text" id="weight"></label>
 
     <br>
     <br>
 
     <button id="button">계산</button>
+
+    <h2>20 이상 24.9 이하의 경우 정상으로 간주</h2>
 
     <hr>
 
@@ -32,17 +43,18 @@
         const bmi1 = document.querySelector("#bmi1")
         const bmi2 = document.querySelector("#bmi2")
 
+        button.addEventListener("click", function () {
+
         let bmi_calculate = weight.value / ((height.value / 100) ** 2)
 
         let asdf = 0
-        if (bmi_calculate < 18.5) or (bmi_calculate > 22.9); {
+        if (bmi_calculate < 18.5 || bmi_calculate > 22.9) {
             asdf = "비정상 범위";
-        } if (18.5 <= bmi_calculate <= 22.9); {
+        } else {
             asdf = " 정상 범위";
         }
 
-        button.addEventListener("click", function () {
-            bmi1.textContent = `BMI 수치: ${weight.value / ((height.value / 100) * (height.value / 100))}`
+            bmi1.textContent = `BMI 수치: ${weight.value / ((height.value / 100) ** 2)}`
             bmi2.textContent = `${asdf}`
         })
     </script>
