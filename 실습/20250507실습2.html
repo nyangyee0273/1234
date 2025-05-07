@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        div {
+            border: 1px solid black;
+            text-align: center;
+            padding: 20px;
+            width: 550px;
+            height: 450px;
+        }
+
+        .h1 {
+            font-size: 30pt;
+            font-weight: bold;
+        }
+
+        img {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>키보드 ← → 키로 슬라이드 전환</h1>
+    <div>
+        <b class="h1">←<img src="https://a.cdn-hotels.com/gdcs/production141/d343/bea501c7-7552-4e84-aca5-f99b5aacb8aa.jpg?impolicy=fcrop&w=1600&h=1066&q=medium" alt="">→</b>
+        <h2>1. 서울 식물원</h2>
+    </div>
+
+    <script>
+        let img = document.querySelector("img")
+        let h2 = document.querySelector("h2")
+
+        let a = 1
+
+        document.addEventListener("keydown", function () {
+            if (a == 1 && event.key == "ArrowRight") {
+                a = 2
+                img.src = "https://a.cdn-hotels.com/gdcs/production39/d438/9d5a5660-c13f-466f-826d-4e08e6a6abd4.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                h2.textContent = "2. 동대문 DDP"
+            } else if (a == 2 && event.key == "ArrowRight") {
+                a = 3
+                img.src = "https://a.cdn-hotels.com/gdcs/production3/d1972/a8adff3d-897d-4b22-8ee9-d01f2e6ec36d.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                h2.textContent = "3. 북촌 한옥마을"
+            } else if (a == 3 && event.key == "ArrowRight") {
+                a = 4
+                img.src = "https://a.cdn-hotels.com/gdcs/production53/d1670/98d7d828-3d07-4a2e-b332-2ab225a63e4c.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                h2.textContent = "4. 남산 서울타워"
+            } else if (a == 4 && event.key == "ArrowRight") {
+                a = 1
+                img.src = "https://a.cdn-hotels.com/gdcs/production141/d343/bea501c7-7552-4e84-aca5-f99b5aacb8aa.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                h2.textContent = "1. 서울 식물원"
+            } else if (a == 1 && event.key == "ArrowLeft") {
+                a = 4
+                img.src = "https://a.cdn-hotels.com/gdcs/production53/d1670/98d7d828-3d07-4a2e-b332-2ab225a63e4c.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                h2.textContent = "4. 남산 서울타워"
+            } else if (a == 4 && event.key == "ArrowLeft") {
+                a = 3
+                img.src = "https://a.cdn-hotels.com/gdcs/production3/d1972/a8adff3d-897d-4b22-8ee9-d01f2e6ec36d.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                h2.textContent = "3. 북촌 한옥마을"
+            } else if (a == 3 && event.key == "ArrowLeft") {
+                a = 2
+                img.src = "https://a.cdn-hotels.com/gdcs/production39/d438/9d5a5660-c13f-466f-826d-4e08e6a6abd4.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                h2.textContent = "2. 동대문 DDP"
+            } else if (a == 2 && event.key == "ArrowLeft") {
+                a = 1
+                img.src = "https://a.cdn-hotels.com/gdcs/production141/d343/bea501c7-7552-4e84-aca5-f99b5aacb8aa.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                h2.textContent = "1. 서울 식물원"
+            }
+        })
+    </script>
+</body>
+</html>
