@@ -33,26 +33,28 @@
 
     <hr>
 
-    <h1 id="bmi1">BMI 수치 :</h1>
-    <h1 id="bmi2"></h1>
+    <div>
+        <h1 id="bmi1">BMI 수치 :</h1>
+        <h1 id="bmi2"></h1>
+    </div>
 
     <script>
-        const height = document.querySelector("#height")
-        const weight = document.querySelector("#weight")
-        const button = document.querySelector("#button")
-        const bmi1 = document.querySelector("#bmi1")
-        const bmi2 = document.querySelector("#bmi2")
+        let height = document.querySelector("#height")
+        let weight = document.querySelector("#weight")
+        let button = document.querySelector("#button")
+        let bmi1 = document.querySelector("#bmi1")
+        let bmi2 = document.querySelector("#bmi2")
 
         button.addEventListener("click", function () {
 
-        let bmi_calculate = weight.value / ((height.value / 100) ** 2)
+            let bmi_calculate = weight.value / ((height.value / 100) ** 2)
 
-        let asdf = 0
-        if (bmi_calculate < 18.5 || bmi_calculate > 22.9) {
-            asdf = "비정상 범위";
-        } else {
-            asdf = " 정상 범위";
-        }
+            let asdf = 0
+            if (bmi_calculate < 20 || bmi_calculate > 24.9) {
+                asdf = "비정상 범위";
+            } else {
+                asdf = " 정상 범위";
+            }
 
             bmi1.textContent = `BMI 수치: ${weight.value / ((height.value / 100) ** 2)}`
             bmi2.textContent = `${asdf}`
