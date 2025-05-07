@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>키보드 이벤트</h1>
+
+    <script>
+        document.addEventListener("click", function (e) {
+            console.log("페이지 클릭함", e.key)
+        })
+
+        document.addEventListener("keydown", function (e) {
+            console.log("키 누름", e.key)
+        })
+
+        document.addEventListener("keyup", function (e) {
+            console.log("키 땜", e.key)
+        })
+
+        // 
+        document.addEventListener("keydown", function (e) {
+            if (e.key = "q") {
+                console.log("q 발동")
+            }
+        })
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key = "w") {
+                console.log("w 발동")
+            }
+        })
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key = "q") {
+                console.log("e 발동")
+            }
+        })
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key = "q") {
+                console.log("r 발동")
+            }
+        })
+    </script>
+</body>
+</html>
