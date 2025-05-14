@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*직계 자손*/
+        .mom > div {
+            background-color: blue;
+            border: 3px solid black;
+        }
+
+        /*전체 자손*/
+        .mom div {
+            color: red;
+        }
+
+        /*마우스가 떠있을 때 스타일 바꾸기*/
+        .box:hover {
+            background-color: #aaa;
+        }
+
+        /**/
+        .child:active {
+            background-color: #aaa;
+        }
+
+        .box:nth-of-type(2n) {
+            background-color: salmon;
+        }
+        .box:nth-of-type(2n + 1) {
+            background-color: rgb(0, 255, 106);
+        }
+    </style>
+</head>
+<body>
+    <div class="mom">
+        <div class="box">자식1</div>
+        <div class="box">자식2</div>
+        <div class="box">자식3</div>
+        <div class="box">자식4</div>
+        <div class="box">자식5</div>
+        <div class="box">자식6</div>
+        <section>
+            <div class="child">자식</div>
+            <div class="child">자식</div>
+            <div class="child">자식</div>
+        </section>
+    </div>
+</body>
+</html>
