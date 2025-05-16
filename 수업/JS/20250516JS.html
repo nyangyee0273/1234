@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'MaplestoryOTFBold';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'MaplestoryOTFBold';
+            font-weight: 900;
+            font-size: 17pt;
+        }
+
+        header {
+            background: #FFEEEE;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #DDEFBB, #FFEEEE);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #DDEFBB, #FFEEEE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            padding: 20px 0;
+        }
+
+        input {
+            display: block;
+            width: 800px;
+            height: 50px;
+            margin: 0 auto;
+            border: none;
+        }
+
+        .todo {
+            border-bottom: 1px solid gray;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <label><input type="text" placeholder="할 일을 입력하세요."></label>
+    </header>
+
+    <section>
+    </section>
+
+    <script>
+        let put = document.querySelector("input")
+        let main = document.querySelector("section")
+
+        put.addEventListener("keydown", function (e) {
+            if (e.key == "Enter" && put.value != "") {
+                const new_todo = document.createElement("div")
+                main.appendChild(new_todo)
+                new_todo.classList.add("todo")
+                new_todo.style.borderBottom = "1px"
+                new_todo.style.borderBottomColor = "gray"
+                new_todo.style.borderBottomStyle = "solid"
+
+                const new_div1 = document.createElement("div")
+                new_div1.classList.add("div1")
+                new_todo.appendChild(new_div1)
+                new_div1.style.width = "5%"
+
+                const new_div2 = document.createElement("div")
+                new_div2.classList.add("div2")
+                new_todo.appendChild(new_div2)
+                new_div2.style.width = "85%"
+
+                const new_div3 = document.createElement("div")
+                new_div3.classList.add("div3")
+                new_todo.appendChild(new_div3)
+                new_div3.style.width = "10%"
+
+                const new_heart = document.createElement("i")
+                new_div1.appendChild(new_heart)
+                new_heart.textContent = "favorite_border"
+                new_heart.classList.add("empty_heart")
+                new_heart.classList.add("material-icons")
+                new_heart.style.color = "red"
+                new_heart.style.cursor = "pointer"
+
+                const new_text = document.createElement("span")
+                new_div2.appendChild(new_text)
+                new_text.textContent = `${put.value}`
+
+                const new_check = document.createElement("i")
+                new_div3.appendChild(new_check)
+                new_check.textContent = "done"
+                new_check.classList.add("check")
+                new_check.classList.add("material-icons")
+                new_check.style.color = "green"
+                new_heart.style.cursor = "pointer"
+
+                const new_done = document.createElement("i")
+                new_div3.appendChild(new_done)
+                new_done.textContent = "clear"
+                new_done.classList.add("done")
+                new_done.classList.add("material-icons")
+                new_done.style.color = "coral"
+                new_done.style.float = "right"
+                new_heart.style.cursor = "pointer"
+                put.value = ""
+
+                new_heart.addEventListener("click", function () {
+                    if (new_heart.classList.contains("empty_heart")) {
+                        new_heart.textContent = "favorite"
+                        new_heart.classList.remove("empty_heart")
+                        new_heart.classList.add("heart")
+                    } else {
+                        new_heart.textContent = "favorite_border"
+                        new_heart.classList.remove("heart")
+                        new_heart.classList.add("empty_heart")
+                    }
+                }) 
+
+                new_check.addEventListener("click", function () {
+                    new_text.style.textDecoration = "line-through"
+                    new_text.style.color = "rgb(205, 205, 205)"
+                    new_div3.removeChild(new_check)
+                })
+
+                new_done.addEventListener("click", function () {
+                    main.removeChild(new_todo)
+                })
+            }
+        })
+    </script>
+</body>
+</html>
