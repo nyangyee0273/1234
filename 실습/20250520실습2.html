@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: rgb(235, 235 ,235);
+        }
+
+        .shadow {
+            box-shadow: 3px 3px 3px rgb(225, 225, 225);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            color: blue;
+            background-color: white;
+            margin-bottom: 40px;
+        }
+        
+        header a {
+            padding: 20px;
+            margin: 0 10px;
+            font-weight: 900;
+            font-size: 14pt;
+            border-radius: 20px;
+        }
+
+        header a:link {
+            text-decoration: none;
+            color: blue;
+        }
+
+        header a:visited {
+            text-decoration: none;
+            color: blue;
+        }
+
+        header a:hover {
+            background-color: rgb(205, 205, 205);
+            color: black;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 40px;
+        }
+
+        .menu {
+            width: 15%;
+            display: block;
+            margin-right: 60px;
+        }
+
+        .menu li {
+            list-style: none;
+            line-height: 50px;
+            font-size: 13pt;
+        }
+
+        .menu li a {
+            display: block;
+            border-radius: 10px;
+            width: 100%;
+            padding-left: 20px;
+        }
+
+        .menu li a:visited {
+            text-decoration: none;
+            color: black;
+        }
+
+        .menu li a:hover {
+            background-color: rgb(205, 205, 205);
+        }
+
+        .menu li a:link {
+            text-decoration: none;
+            color: black;
+        }
+
+        .news {
+            width: 50%;
+            margin-right: 60px;
+        }
+
+        .news div {
+            height: 150px;
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .guide {
+            width: 20%;
+        }
+
+        .box1 {
+            border-bottom: 1px solid rgb(205, 205, 205);
+            margin-bottom: 20px;
+        }
+
+        .box1 h2 {
+            margin-bottom: 10px;
+        }
+
+        .box1 p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="shadow">
+        <h1>로고</h1>
+        <div class="nav">
+            <a href="">게시판</a>
+            <a href="">친구들</a>
+            <a href="">피드</a>
+            <a href="">즐겨찾기</a>
+        </div>
+        <div class="login">
+            <a href="">로그인</a>
+            <a href="">회원가입</a>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="menu">
+                <ul>
+                    <li><a href="">친구 찾기</a></li>
+                    <li><a href="">그룹</a></li>
+                    <li><a href="">저장됨</a></li>
+                    <li><a href="">페이지</a></li>
+                    <li><a href="">이벤트</a></li>
+                    <li><a href="">최신</a></li>
+                    <li><a href="">즐겨찾기</a></li>
+                </ul>
+            </div>
+
+            <article class="news">
+                <div class="shadow">
+                    <h2>오늘의 뉴스</h2>
+                    <p>도파민 중독에 대해</p>
+                </div>
+                <div class="shadow">
+                    <h2>오늘의 뉴스</h2>
+                    <p>어떤 일을 하려면 어려움이 있다. 그래도 해야 된다.</p>
+                </div>
+            </article>
+
+            <div class="guide">
+                <div class="box1">
+                    <h2>가이드</h2>
+                    <p>상단 헤더와 중앙 콘텐츠에 그림자</p>
+                    <p>상단과 좌측 메뉴는 마우스가 변하며, 클릭 가능</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
