@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        body {
+            background-image: url("https://resources.vortexgaming.io/upload/post/2024/10/03/e97213fa80484f4a97dbd52221fe3e0d.jpg");
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: rgba(245, 245, 245, 0.5);
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+
+        .bigbox {
+            width: 900px;
+            height: 900px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .small_box {
+            width: 300px;
+            height: 300px;
+        }
+
+        .box1 {
+            background-image: url("https://i.namu.wiki/i/clM-puMZCQifu8Hi-0d6J7fqwBcTKPjRGJ8VLP8BMhgbVPrC3OOzqc75VNWhMqibNXibtw_NaC8jS1DdEwWp-Q.webp");
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        .box2 {
+            background-image: url("https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/103014.jpg");
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        .box3 {
+            background-image: url("https://mblogthumb-phinf.pstatic.net/MjAyMjA0MDZfMjY4/MDAxNjQ5MjI5NDA3ODU0.SljtCTFUuZ8raDwIob8PHl5GQLOy76aJdrlfA3_63uog.baeJh1luVdANhNfjtQV1v-n02Qk3ip9IRZ0HMT-sh3Ug.JPEG.jonghyon1000/1.jpg?type=w800");
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        .box4 {
+            background-image: url("https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/103027.jpg");
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        .box5 {
+            background-image: url("https://i.namu.wiki/i/35P48YQb4K-YqaZ75fqnfj68XGspRHhXZ7TSB7VnZocAvOkB0HZ4OYz6WaCp7SrF2tH9xQfF_boYZih7BrmbeA.gif");
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        .box6 {
+            background-image: url("https://mblogthumb-phinf.pstatic.net/MjAxOTAyMjhfMyAg/MDAxNTUxMzM5Nzc2ODM1.AR9STU_kAClMynjg9cnOqwZ6BRO9SsgaTDq99P17cxIg.WI0bctPAFpdKIZfbOfA9sWsAjsMjsXW6i0A5d5OwYswg.JPEG.ultimatehyuk/103016.jpg?type=w800");
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        .box7 {
+            background-image: url("https://mblogthumb-phinf.pstatic.net/MjAyMjA0MDVfMjI1/MDAxNjQ5MTI1NTc5NzM4.IIzvXvT3PNCkWxkkUgQFqUdMjkXYLn7WpXUWc-y9JHIg.LOc-O_3ThRoMV2tMlGro-fZbsTyxNv7E34D6_cgmrRog.JPEG.jonghyon1000/1.jpg?type=w800");
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        .box8 {
+            background-image: url("https://i.namu.wiki/i/pTS5NJc1-L8bArqgvV0_HMLCMp7lPA7K8yNhQCou2nCeAZGUP2xZzhy_SBmRE6lo3QzH3jawRHmqpAP3dG50TlxtDlKhYT7pwh6nuLmFDM6mccF8rf60e1TRjKnih-d_welH93eGLLO94hg2UEw0Ig.webp");
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        .box9 {
+            background-image: url("https://mblogthumb-phinf.pstatic.net/MjAyMTA4MDVfMjQ5/MDAxNjI4MTI5NjAzNDg1.9hf1n481mrr_HCvkcrbScaA4mS4RqCCLq6eT6mcr4Wog.k7f4G8YEx-FZqscL4m-I1rHcofRY8ompAo3RCZ0nPTYg.JPEG.stor1/lol_%EC%95%85%EC%9D%98%EC%97%AC%EB%8B%A8_%EC%95%84%EB%A6%AC.jpg?type=w800");
+            background-size: cover;
+            background-position: 75% 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>display 활용하기</h1>
+        <h2>div태그를 3*3으로 배열하기</h2>
+        <h2>각각의 div 태그는 300px * 300px</h2>
+    </header>
+
+    <div class="bigbox">
+        <div class="box">
+            <div class="small_box box1"></div>
+            <div class="small_box box2"></div>
+            <div class="small_box box3"></div>
+        </div>
+        <div class="box">
+            <div class="small_box box4"></div>
+            <div class="small_box box5"></div>
+            <div class="small_box box6"></div>
+        </div>
+        <div class="box">
+            <div class="small_box box7"></div>
+            <div class="small_box box8"></div>
+            <div class="small_box box9"></div>
+        </div>
+    </div>
+</body>
+</html>
