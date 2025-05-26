@@ -60,9 +60,6 @@
                 const new_todo = document.createElement("div")
                 main.appendChild(new_todo)
                 new_todo.classList.add("todo")
-                new_todo.style.borderBottom = "1px"
-                new_todo.style.borderBottomColor = "gray"
-                new_todo.style.borderBottomStyle = "solid"
 
                 const new_div1 = document.createElement("div")
                 new_div1.classList.add("div1")
@@ -119,7 +116,7 @@
                         new_heart.classList.remove("heart")
                         new_heart.classList.add("empty_heart")
                     }
-                }) 
+                })
 
                 new_check.addEventListener("click", function () {
                     new_text.style.textDecoration = "line-through"
