@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>애국가 타자연습</h1>
+        <p>타이핑을 하여 내용이 일치하면 ok 표시</p>
+        <p>ok 표시를 위한 태그는 span 사용 권장</p>
+    </div>
+
+    <hr>
+
+    <div>
+        <h2>input 이벤트와 조건문을 활용</h2>
+        <h3>값을 입력하면 맞는지 점검함</h3>
+        <label for="">동해물과 <input type="text" id="donghae"><span class="donghae"></span></label><br><br>
+        <label for="">백두산이 <input type="text" id="baekdu"><span class="baekdu"></span></label>
+    </div>
+
+    <div>
+        <h2>키보드 이벤트 활용</h2>
+        <h3>Enter를 누르면 확인함</h3>
+        <label for="">마르고 <input type="text" id="a1"><span class="a1"></span></label><br><br>
+        <label for="">닳도록 <input type="text" id="a2"><span class="a2"></span></label>
+    </div>
+
+    <script>
+        let donghae = document.querySelector("#donghae")
+        let baekdu = document.querySelector("#baekdu")
+        let donghae_span = document.querySelector(".donghae")
+        let baekdu_span = document.querySelector(".baekdu")
+        let a1 = document.querySelector("#a1")
+        let a2 = document.querySelector("#a2")
+        let a1_span = document.querySelector(".a1")
+        let a2_span = document.querySelector(".a2")
+
+        donghae.addEventListener("input", () => {
+            if (donghae.value == "동해물과") {
+                donghae_span.textContent = "ok"
+            } else {
+                donghae_span.textContent = "x"
+            }
+        })
+
+        baekdu.addEventListener("input", () => {
+            if (baekdu.value == "백두산이") {
+                baekdu_span.textContent = "ok"
+            } else {
+                baekdu_span.textContent = "x"
+            }
+        })
+
+        a1.addEventListener("keypress", (e) => {
+            if (e.key == "Enter") {
+                if (a1.value == "마르고") {
+                    a1_span.textContent = "ok"
+                } else {
+                    a1_span.textContent = "x"
+                }
+            }
+        })
+
+        a2.addEventListener("keypress", (e) => {
+            if (e.key == "Enter") {
+                if (a2.value == "마르고") {
+                    a2_span.textContent = "ok"
+                } else {
+                    a2_span.textContent = "x"
+                }
+            }
+        })
+    </script>
+</body>
+</html>
