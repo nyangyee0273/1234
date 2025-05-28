@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            margin: 50px auto;
+            width: 900px;
+            display: grid;
+            grid-template-columns: repeat(3, 300px);
+            gap: 20px;
+        }
+
+        .child h2 {
+            position: relative;
+            color: white;
+            text-shadow: 2px 2px black;
+            top: 20px;
+            z-index: 2;
+        }
+
+        .child {
+            position: relative;
+            opacity: 80%;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .child:hover {
+            opacity: 100%;
+        }
+
+        .crop {
+            z-index: 1;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>그리드를 이용한 실습</h1>
+        <h3>각각의 박스 : 300px * 200px, 그리드 여백 20px</h3>
+        <h3>글씨에 그림자 넣기</h3>
+        <h3>글씨 위치는 position을 이용해 조절할 수 있음</h3>
+        <h3>박스 전체를 클릭 가능한 영역으로 만들 것 + 박스에 마우스 올리면 밝아짐</h3>
+        <h3>배경이미지는 어둡게 처리</h3>
+    </header>
+    <hr>
+
+    <section class="container">
+        <div class="child">
+            <h2>더 헤르타</h2>
+            <div class="crop">
+                <img style="margin-top: -25%; margin-left: -27%;" src="https://image.zeta-ai.io/profile-image/91b60f84-6e3a-49a3-92bf-51c36204f649/6b099e5e-cdcd-4bc5-be0f-fee1c1dd9a05.jpeg?w=3840&q=75&f=webp" alt="">
+            </div>
+        </div>
+        <div class="child">
+            <h2>반디</h2>
+            <div class="crop">
+                <img style="margin-top: -10%; margin-left: -69%;" src="https://i.namu.wiki/i/Asx6b_TtqSZun44jbGJH9PKsU9tkzSb4eP8Bkm4UoyLm58nsE10ti9N2qc_aP5qtvHyGdP4W3WCwA4yxgVjUDw.webp" alt="">
+            </div>
+        </div>
+        <div class="child">
+            <h2>카스토리스</h2>
+            <div class="crop">
+                <img style="width:500px; margin-top: -12%; margin-left: -50%;" src="https://i.namu.wiki/i/ZCAnTPBj5mjn62fqgofYHPme_DLsedScrZsIQEr3smRm_xOnOjiYHKd5sVm0QOD6YThjm2zegQ6eiWR_gwmtKg.webp" alt="">
+            </div>
+        </div>
+        <div class="child">
+            <h2>사이퍼</h2>
+            <div class="crop">
+                <img style="width: 400px; margin-top: -25%; margin-left: -25%;" src="https://i.namu.wiki/i/clzaShJZogdEdDi3RLW7GAAuXLpZtiffPrZ47U2fV7svMhxBJBam3VsdnApEFzfXPPmZjRQUyq0H3Jku2vB1Pg.webp" alt="">
+            </div>
+        </div>
+        <div class="child">
+            <h2>망귀인</h2>
+            <div class="crop">
+                <img style="margin-top: -25%; margin-left: -65%;" src="https://i.namu.wiki/i/Gyj7ZDUvGWxC38skdKNX8TZ9sVHn9KSxf3zN_mjGTP9b0XdXLb28yUTIQYqCSQuwZyQxPDqvgWO08UYXrUm5lQ.webp" alt="">
+            </div>
+        </div>
+        <div class="child">
+            <h2>아케론</h2>
+            <div class="crop">
+                <img style="margin-top: -10%; margin-left: -47%;" src="https://static.zerochan.net/Acheron.1024.4146465.webp" alt="">
+            </div>
+        </div>
+        <div class="child">
+            <h2>경류</h2>
+            <div class="crop">
+                <img style="margin-top: -10%; margin-left: -65%;" src="https://blog.kakaocdn.net/dn/2fTq2/btsxrkyBxdW/xyr63KX8llJRadGkHsJVO1/img.webp" alt="">
+            </div>
+        </div>
+        <div class="child">
+            <h2>로빈</h2>
+            <div class="crop">
+                <img style="width: 600px; margin-top: -20%; margin-left: -30%;" src="https://mblogthumb-phinf.pstatic.net/MjAyNDEyMjZfMTkw/MDAxNzM1MjA5MDE3NTE0.kHgOS-iNU8Tbv3A6xZYC8EvbmeQEnwzofDnrJJozwfYg.59WQjhP7kdp2-uwTmCjFquAnrqkGMr0TrdL5baUHlLEg.PNG/1111.png?type=w800" alt="">
+            </div>
+        </div>
+        <div class="child">
+            <h2>아글라이아</h2>
+            <div class="crop">
+                <img style="margin-top: -5%; margin-left: -95%;" src="https://i.namu.wiki/i/SDZnJovfrvJ2OlnAUCNTQiOE3RTvcCen5v4FhTUs8UysKdiXmnRQZ3UaBWyGDbbHuOIUpDce5eEk6aNjQd_RIA.webp" alt="">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
