@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        section {
+            width: 250px;
+            height: 100%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            border-right: 1px solid rgb(225, 225, 225);
+        }
+
+        section > a > img {
+            height: 70px;
+            flex: 2;
+        }
+
+        .nav1 {
+            flex: 22;
+        }
+
+        li {
+            list-style: none;
+            height: 40px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+
+        i {margin-right: 10px;}
+
+        nav > li > a {
+            align-items: center;
+            display: flex;
+        }
+
+        nav > li > a:visited {
+            text-decoration: none;
+            color: black;
+        }
+
+        nav > li > a:link {
+            text-decoration: none;
+            color: black;
+        }
+        nav > li:hover {
+            background-color: rgb(205, 205, 205);
+        }
+        
+        .nav2 {
+            flex: 1;
+        }
+
+        .main {
+            position: relative;
+            left: 300px;
+            display: flex;
+            width: 100%;
+        }
+
+        .search {
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            left: 250px;
+            border-bottom: 1px solid rgb(225, 225, 225);
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+        }
+
+        .search input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid rgb(225, 225, 225);
+            border-radius: 10px;
+        }
+
+        .guide {
+            position: relative;
+            top: 50px;
+            flex: 6;
+        }
+
+        .spirit_blossom {
+            width: 70%;
+            margin: 0 auto;
+            border-bottom: 1px solid rgb(225, 225, 225);
+            padding: 20px;
+        }
+
+        .spirit_blossom img {
+            width: 100%;
+        }
+
+        .recommend {
+            position: relative;
+            top: 50px;
+            flex: 4;
+            padding: 20px;
+        }
+
+        .recommend img {
+            width: 50px;
+        }
+
+        .recommend ul li {
+            display: flex;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <section>
+            <a href=""><img src="https://logos-world.net/wp-content/uploads/2020/05/Instagram-Logo-2016-present.png" alt=""></a>
+
+            <nav class="nav1">
+                <li><a href=""><i class="material-icons">home</i> 홈</a></li>
+                <li><a href=""><i class="material-icons">search</i> 검색</a></li>
+                <li><a href=""><i class="material-icons">ondemand_video</i> 탐색 탭</a></li>
+                <li><a href=""><i class="material-icons">ondemand_video</i> 릴스</a></li>
+                <li><a href=""><i class="material-icons">comment</i> 메세지</a></li>
+                <li><a href=""><i class="material-icons">favorite_border</i> 알림</a></li>
+                <li><a href=""><i class="material-icons">add_circle_outline</i> 만들기</a></li>
+            </nav>
+
+            <nav class="nav2">
+                <li><a href=""><i class="material-icons">more_vert</i> 더보기</a></li>
+            </nav>
+        </section>
+
+        <div class="main">
+            <div class="search">
+                <i class="material-icons">search</i>
+                <input type="text" placeholder="검색">
+            </div>
+            <div class="guide">
+                <div class="spirit_blossom">
+                    <h2>영혼의 꽃 킨드레드</h2>
+                    <div>
+                        <a href=""><img src="https://i.namu.wiki/i/iCk1NA9cI1omYpZirsAjtv6yHzUHc_CFn7rb4ko0P_DMkSavEGvmi5AlWnJE04Umt5WH1iFy_sM4fm7hgHfSPQ.webp" alt=""></a>
+                    </div>
+                    <i class="material-icons">favorite_border</i>
+                    <i class="material-icons">comment</i>
+                    <p>아이오니아의 전통에서 킨드레드의 의무를 다하기 위해 부름을 받기 전까지 끝없이 장난을 치는 아이와 맹수로 그려집니다. 둘이 어디에서 왔는지 모르지만, 오래전 알던 누군가에 대한 상실감을 느낀다고 합니다.</p>
+                </div>
+
+                <div class="spirit_blossom">
+                    <h2>영혼의 꽃 아리</h2>
+                    <div>
+                        <a href=""><img src="https://i.namu.wiki/i/xHpR4s9EmwTVIjiPRFgSw25yhnIatGeM6YcKzjOoTJebRrcMntlUcYN4OrQvU-r6LFpeCWiFHRVSpjYjDnmmnw.webp" alt=""></a>
+                    </div>
+                    <i class="material-icons">favorite_border</i>
+                    <i class="material-icons">comment</i>
+                    <p>구원의 영혼인 여우는 영혼 세계에 도착한 모든 필멸자들의 영혼에게 손짓합니다. 산 자의 운명을 사냥놀이처럼 생각하는 변덕스럽고 엉뚱한 영혼은 필멸자의 혼이 최후의 안식을 찾을 기회를 제공하지만··· 길에서 벗어난다면 개입하지 않을 것입니다</p>
+                </div>
+
+                <div class="spirit_blossom">
+                    <h2>영혼의 꽃 자이라</h2>
+                    <div>
+                        <a href=""><img src="https://i.namu.wiki/i/eypOgU3hcs3J8upk_2Tnk_mQU5fl2Kz52BEn5R1nnu0YhkWycFXgW4FpgtKh1ZMG9WjLhKNsyGZR-TRKNdsH0w.webp" alt=""></a>
+                    </div>
+                    <i class="material-icons">favorite_border</i>
+                    <i class="material-icons">comment</i>
+                    <p>가슴에 깊은 상처를 입은 채 슬픔을 잊기를 염원하던 여인이 있었습니다. 강력한 영혼이 이 염원을 듣고 그녀의 소원을 이뤄주었습니다. 여인의 눈물은 꽃망울이 되었고, 몸은 뿌리를 내렸으며, 그렇게 망각의 동산이 탄생했습니다. 이제 마음이 지친 자들은 꽃이 슬픔을 덜어주길 바라며 그 품속을 떠돕니다.</p>
+                </div>
+            </div>
+            <div class="recommend">
+                <h2>추천 유저</h2>
+                <ul>
+                    <li>
+                        <div>
+                            <img src="https://i.namu.wiki/i/pJSsvGxMwti0_7gRYJtbAupjkCVKgG1nf2p5ByHHFFxFr6Nb1z9k3cLP311WIgydxGBYd-Pa6iwQqpRKOpSpVA.webp" alt="">
+                        </div>
+                        <div>
+                            <h3>영혼의 꽃 킨드레드</h3>
+                            <p>영혼의 꽃 킨드레드입니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="https://blog.kakaocdn.net/dn/bpEWTx/btqK7bCCt6R/lpHiCqU3MK8JDKHb8xhJp0/img.jpg" alt="">
+                        </div>
+                        <div>
+                            <h3>영혼의 꽃 아리</h3>
+                            <p>영혼의 꽃 아리입니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/tiles/Zyra_64.jpg" alt="">
+                        </div>
+                        <div>
+                            <h3>영혼의 꽃 자이라</h3>
+                            <p>영혼의 꽃 자이라 입니다.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
