@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .sec {
+            display: flex;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .img {
+            width: 920px;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        .img  img {
+            margin-right: 10px;
+        }
+
+        .star {
+            color: gold;
+        }
+
+        img {
+            width: 300px;
+            height: 200px;
+        }
+
+        .img1 {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cap {
+            width: 300px;
+            height: 200px;
+            padding-top: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            position: absolute;
+            left: 0px;
+            opacity: 0;
+            transition: all 0.4s;
+        }
+
+        .img1:hover .cap {
+            opacity: 1;
+            transform: translate(0px, -200px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>마우스 올리면 상세 설명 표시</h1>
+        <div class="img">
+            <div class="img1">
+                <img src="https://embed.pixiv.net/spotlight.php?id=10503&lang=ko" alt="">
+                <div class="cap">
+                    <h2>더 헤르타</h2>
+                    <p>붕괴 : 스타레일</p>
+                    <p class="star">★★★★★★★★★</p>
+                </div>
+            </div>
+
+            <div class="img1">
+                <img src="https://pbs.twimg.com/media/Gmyb8hQaUAIq82e.jpg:large" alt="">
+                <div class="cap">
+                    <h2>사이퍼</h2>
+                    <p>붕괴 : 스타레일</p>
+                    <p class="star">★★★★★★★★★★★★★★★★★</p>
+                </div>
+            </div>
+
+            <div class="img1">
+                <img src="https://embed.pixiv.net/spotlight.php?id=10665&lang=ko" alt="">
+                <div class="cap">
+                    <h2>카스토리스</h2>
+                    <p>붕괴 : 스타레일</p>
+                    <p class="star">★★★★★★★★★</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <br>
+    <hr>
+
+    <div class="main">
+        <h1>팁</h1>
+        <div class="sec">
+            <div class="img1">
+                <img src="https://pbs.twimg.com/media/Gmyb8hQaUAIq82e.jpg:large" alt="">
+                <div class="cap">
+                    <h2>사이퍼</h2>
+                    <p>붕괴 : 스타레일</p>
+                    <p class="star">★★★★★★★★★★★★★★★★★</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
