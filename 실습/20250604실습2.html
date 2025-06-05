@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>주문서</h1>
+    <h3>먹고 싶은 메뉴를 선택합니다</h3>
+
+    <label>
+        <input type="checkbox" id="chicken">치킨 16,000
+    </label>
+
+    <br>
+    <br>
+
+    <label>
+        <input type="checkbox" id="sushi">초밥 20,000
+    </label>
+    <br>
+    <br>
+
+    <label>
+        <input type="checkbox" id="sundae">순대 5,000
+    </label>
+    <hr>
+
+    <h2 id="output">가격 : 0</h2>
+
+    <script>
+        const chicken = document.querySelector("#chicken")
+        const sushi = document.querySelector("#sushi")
+        const sundae = document.querySelector("#sundae")
+        const output = document.querySelector("#output")
+
+        let output_value = 0
+
+        chicken.addEventListener("change", () => {
+            console.log("함수 호출")
+            console.log(chicken.checked)
+            if (chicken.checked == true) {
+                output_value += 16000
+                console.log(output_value)
+            } else if (chicken.checked == false) {
+                output_value -= 16000
+                console.log(output_value)
+            }
+            output.textContent = `가격 : ${output_value}`
+        })
+
+        sushi.addEventListener("change", () => {
+            console.log("함수 호출")
+            console.log(sushi.checked)
+            if (sushi.checked == true) {
+                output_value += 20000
+                console.log(output_value)
+            } else if (sushi.checked == false) {
+                output_value -= 20000
+                console.log(output_value)
+            }
+            output.textContent = `가격 : ${output_value}`
+        })
+
+        sundae.addEventListener("change", () => {
+            console.log("함수 호출")
+            console.log(sundae.checked)
+            if (sundae.checked == true) {
+                output_value += 5000
+                console.log(output_value)
+            } else if (sundae.checked == false) {
+                output_value -= 5000
+                console.log(output_value)
+            }
+            output.textContent = `가격 : ${output_value}`
+        })
+    </script>
+</body>
+</html>

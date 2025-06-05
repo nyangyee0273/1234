@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button>버튼</button>
+    </div>
+
+    <select name="" id="">
+        <option value="val1">옵션1</option>
+        <option value="val2">옵션2</option>
+        <option value="val3">옵션3</option>
+    </select>
+
+    <br>
+
+    <label for="">
+        <input type="checkbox"> check
+    </label>
+
+    <script>
+        const button = document.querySelector("div")
+        button.addEventListener("click", (event) => {
+            console.log(event)
+            console.log(event.target) // 이벤트가 일어난 태그
+            console.log(event.currentTarget) // 이벤트가 일어난 최상위 태그
+            console.log("this", this)
+        })
+
+        const select = document.querySelector("select")
+        console.log(select.options)
+        console.log(select.options[1])
+        console.log("value: ", select.options[1].value)
+        console.log("textContent: ", select.options[1].textContent)
+        console
+
+        const checkbox = document.querySelector("input")
+        checkbox.checked = true // 체크 여부 수정
+        console.log("체크 여부: ", checkbox.checked)
+        console.log("체크박스 value: ", checkbox.value)
+    </script>
+</body>
+</html>
