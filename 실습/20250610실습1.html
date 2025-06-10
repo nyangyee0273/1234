@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            box-sizing: border-box;
+            width: 180px;
+            height: 40px;
+            padding: 10px;
+        }
+
+        button {
+            width: 50px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>입대일은 만 19세가 되는 날을 기준</h1>
+    <p>------------------------가이드: 아래 내용 참고------------------------</p>
+    <h2>2005년생 및 그 이전 : 무조건 입대 가능</h2>
+    <h2>2006년생 : 6월 이전 출생자는 무조건 입대 가능</h2>
+    <h2>2006년 6월 생 : 10일 이전 출생자는 입대 가능</h2>
+    <hr>
+    <label for="">
+        <input type="text" placeholder="양식: 2001.1.1">
+        <button>계산</button>
+    </label>
+
+    <script>
+        let button = document.querySelector("button")
+        let input = document.querySelector("input")
+        let input_list = 0
+
+        button.addEventListener("click", () => {
+            if (input.value != "") {
+                input_list = input.value.split(".")
+                if (input_list[0] <= 2005) {
+                    console.log("입대")
+                } else if (input_list[0] == 2006 && (input_list[1] == "06" || input_list[1] == 6) && input_list[2] <= 10) {
+                    console.log("입대")
+                } else {
+                    console.log("아직")
+                }
+            }
+        })
+    </script>
+</body>
+</html>
