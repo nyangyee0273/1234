@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="temp">기온</h1>
+    <h1 class="feel_temp">체감온도</h1>
+    <h1 class="highest_temp">최고기온</h1>
+    <h1 class="lowest_temp">최저기온</h1>
+    <h1 class="moisture">습도</h1>
+    <h1 class="wind">풍속</h1>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+
+        const temp = document.querySelector(".temp")
+        const feel_temp = document.querySelector(".feel_temp")
+        const highest_temp = document.querySelector(".highest_temp")
+        const lowest_temp = document.querySelector(".lowest_temp")
+        const moisture = document.querySelector(".moisture")
+        const wind = document.querySelector(".wind")
+
+        // 지정된 ID를 가진 유저에 대한 요청
+        axios.get('https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=4df8d94d366f016423fff8c574a8189e') // API 호출
+        .then(function (response) { // 호출 성공시 실행
+            // 성공 핸들링
+            console.log(response);
+            temp.textContent = (response.data.main.temp - 273.15).toFixed(2)
+            feel_temp.textContent = (response.data.main.feels_like - 273.15).toFixed(2)
+            highest_temp.textContent = (response.data.main.temp_max - 273.15).toFixed(2)
+            lowest_temp.textContent = (response.data.main.temp_min - 273.15).toFixed(2)
+            moisture.textContent = `${response.data.main.humidity}%`
+            wind.textContent = response.data.wind.speed
+        })
+        .catch(function (error) { // 호출 실패시 실행
+            // 에러 핸들링
+            console.log(error);
+        })
+    </script>
+</body>
+</html>
