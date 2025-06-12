@@ -62,8 +62,6 @@
             <li>slide 01</li>
             <li>slide 02</li>
             <li>slide 03</li>
-            <li>slide 04</li>
-            <li>slide 05</li>
         </ul>
     </div>
 
@@ -73,21 +71,21 @@
     </p>
 
     <script>
-        let slides = document.querySelector(".slides"),
-            slide = document.querySelectorAll(".slides li"),
-            n = 0,
-            count = slide.length,
-            slideWidth = 200,
-            slideMargin = 30,
-            prevBtn = document.querySelector(".prev"),
-            nextBtn = document.querySelector(".next"),
-            isAnimating = false
+        let slides = document.querySelector(".slides"), // ul 지정
+            slide = document.querySelectorAll(".slides li"), // ul의 요소 지정
+            n = 0, // 내가 쓸 변수 하나
+            count = slide.length, // ul의 요소의 길이 측정
+            slideWidth = 400, // ul의 요소의 너비 재정의
+            slideMargin = 60, // ul의 요소 마진 재정의
+            prevBtn = document.querySelector(".prev"), // 이전 버튼
+            nextBtn = document.querySelector(".next"), // 다음 버튼
+            isAnimating = false // 움직이고 있는지
 
-        makeClone();
+        makeClone(); // 초기 값 함수
 
-        function makeClone() {
-            for (let i = 0; i < count; i++) {
-                let cloneSlide = slide[i].cloneNode(true)
+        function makeClone() { // 초기값
+            for (let i = 0; i < count; i++) { // i가 ul의 요소의 길이보다 작을 때
+                let cloneSlide = slide[i].cloneNode(true) // 
                 cloneSlide.classList.add("clone")
                 slides.appendChild(cloneSlide)
             }
@@ -131,7 +129,7 @@
         })
 
         function moveSlide (num) {
-            isAnimating =true
+            isAnimating = true
             slides.style.transform = `translateX(-${(count + num) * (slideWidth + slideMargin)}px)`
             n = num
             console.log(n, count)
