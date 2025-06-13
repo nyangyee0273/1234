@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_이시현</title>
+    <style>
+        @keyframes scroll-animation {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: -152px;
+            }
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .slide {
+            background-color: rgb(235, 235, 235);
+            border-radius: 30px;
+        }
+
+        .slide img {
+            border-radius: 10px;
+        }
+
+        header {
+            padding: 0 20px;
+            height: 50px;
+            background-color: white;
+            border-bottom: 1px solid black;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav {
+            display: flex;
+        }
+
+        .nav a:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        .logo {
+            margin: 0 auto;
+        }
+
+        .SNS img {
+            width: 30px;
+        }
+
+        .explain {
+            background-color: aquamarine;
+            padding: 30px;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 30px;
+        }
+
+        nav a:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        .inf-slide {
+            width: 100%;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            overflow: hidden;
+        }
+
+        .track {
+            display: flex;
+            position: relative;
+            width: 3192px;
+            animation: scroll-animation 1s linear infinite;
+        }
+
+        .track p {
+            width: 142px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .rig-lef_slide h1 {
+            background-color: gold;
+            text-align: center;
+        }
+
+        .normal-box {
+            position: relative;
+            font-size: 50pt;
+        }
+
+        .prev1 {
+            position: absolute;
+            left: 0;
+            top: 25%;
+            cursor: pointer;
+        }
+
+        .next1 {
+            position: absolute;
+            right: 0;
+            top: 25%;
+            cursor: pointer;
+        }
+
+        .normal_slide {
+            width: 300vw;
+            display: flex;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .normal_slide li {
+            display: inline-block;
+            width: 100vw;
+            height: 300px;
+        }
+
+        .normal_slide img {
+            height: 300px;
+        }
+
+        .normal_slide.animated {
+            transition: all 0.4s;
+        }
+
+        .faded_slide h1 {
+            background-color: blueviolet;
+            text-align: center;
+        }
+
+        .fade_box {
+            position: relative;
+            font-size: 50pt;
+        }
+
+        .prev2 {
+            position: absolute;
+            left: 0;
+            top: 25%;
+            cursor: pointer;
+        }
+
+        .next2 {
+            position: absolute;
+            right: 0;
+            top: 25%;
+            cursor: pointer;
+        }
+
+        .fade_slide {
+            width: 300vw;
+            display: flex;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .fade_slide li {
+            display: inline-block;
+            width: 100vw;
+            height: 300px;
+        }
+
+        .fade_slide img {
+            height: 300px;
+        }
+
+        .fade_slide.fade-in {
+            opacity: 0;
+            transition: all 0.4s;
+        }
+
+        .fade_slide.fade-out {
+            opacity: 1;
+            transition: all 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="nav">
+            <a href=""><li>About</li></a>
+            <a href=""><li>Portfolio</li></a>
+            <a href=""><li>Album</li></a>
+            <a href=""><li>Contact</li></a>
+        </ul>
+        <div class="logo">
+            <h1>AI COM</h1>
+        </div>
+        <div class="SNS">
+            <a href=""><img src="https://i.namu.wiki/i/PpCUHjc8PoAlAWoSip-m3KtgYMq7Ft1sI2BiCioMrclYCFdnjCEVKdPyXJ3yqXgHjgboqOp-8Q9z71WTisQy_A.svg" alt=""></a>
+            <a href=""><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFCa8rUxSS0puzXCVlrgyANkgQfSJZUss4fw&s" alt=""></a>
+            <a href=""><img src="https://cdn-icons-png.flaticon.com/512/3291/3291667.png" alt=""></a>
+        </div>
+    </header>
+
+    <section>
+        <div class="explain">
+            <h1>AI 컴퓨터과</h1>
+            <br>
+            <h2>이곳에서 펼쳐질 찬란한 내 삶을 위해</h2>
+            <br>
+            <p>"현재는 불가능해보여도 계속 하다 보면 불가능했던 일들이 점점 가벼워진다."</p>
+            <p>이곳에서 점점 성장하는 나를 발견합니다.</p>
+            <br>
+            <nav>
+                <a href=""><li>학과 소개</li></a>
+                <a href=""><li>교육과정</li></a>
+                <a href=""><li>구성원 안내</li></a>
+                <a href=""><li>프로그램 소개</li></a>
+                <a href=""><li>앨범</li></a>
+                <a href=""><li>동아리 활동</li></a>
+            </nav>
+        </div>
+        <div class="inf_slide">
+            <div class="track">
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+                <p>붕괴 스타레일 사이퍼</p>
+            </div>
+        </div>
+        <div class="rig-lef_slide">
+            <div>
+                <h1>일반 슬라이드</h1>
+            </div>
+            <div class="normal-box slide">
+                <ul class="normal_slide">
+                    <li><img src="https://i.namu.wiki/i/6KmzUoOlnvFQIR8uNhfU9mP_ZVozRquVULG75evcO9SK7anZPq-RLKgGy8ARkUmc5rmVVDzrnShL-M-inv9zBDOMKK4WQpyfAHi-Fno5H26LwZVh3tbuf7olYrYgUxz4Dj3UTZL5Kz0fz9XDbAJBVA.webp" alt="maplestory_len"></li>
+                    <li><img src="https://i.namu.wiki/i/U49XrdcXXsUgw7VCyrc93-lJ1IYI9XGx5NgDUWUS8Y91Nr6sUC46jdREDzcBqVsxy96ZoDdKWH3ENXEwyTa8OA.webp" alt=""></li>
+                    <li><img src="https://i.namu.wiki/i/v0676U6Yn_0-LuDNVmkLArIEIkzrKxZ33-9NeaxkM_KWoGMuvDL7hXFZwyX-3Ewm_fTOewQCgAMUHuSz_TZXig.webp" alt=""></li>
+                </ul>
+
+                <span class="prev1"><</span>
+                <span class="next1">></span>
+            </div>
+        </div>
+        <div class="faded_slide slide">
+            <div>
+                <h1>페이드</h1>
+            </div>
+            <div class="fade_box slide">
+                <ul class="fade_slide">
+                    <li><img src="https://i.namu.wiki/i/6KmzUoOlnvFQIR8uNhfU9mP_ZVozRquVULG75evcO9SK7anZPq-RLKgGy8ARkUmc5rmVVDzrnShL-M-inv9zBDOMKK4WQpyfAHi-Fno5H26LwZVh3tbuf7olYrYgUxz4Dj3UTZL5Kz0fz9XDbAJBVA.webp" alt=""></li>
+                    <li><img src="https://i.namu.wiki/i/U49XrdcXXsUgw7VCyrc93-lJ1IYI9XGx5NgDUWUS8Y91Nr6sUC46jdREDzcBqVsxy96ZoDdKWH3ENXEwyTa8OA.webp" alt=""></li>
+                    <li><img src="https://i.namu.wiki/i/v0676U6Yn_0-LuDNVmkLArIEIkzrKxZ33-9NeaxkM_KWoGMuvDL7hXFZwyX-3Ewm_fTOewQCgAMUHuSz_TZXig.webp" alt=""></li>
+                </ul>
+
+                <span class="prev2"><</span>
+                <span class="next2">></span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let slides_normal = document.querySelector(".normal_slide"),
+            slide_normal = document.querySelectorAll(".normal_slide li")
+            prev1 = document.querySelector(".prev1")
+            next1 = document.querySelector(".next1")
+            count = slide_normal.length
+            n = 0
+            normal_Animating = false
+
+        normal_Clone()
+
+        function normal_Clone () {
+            for (let i = 0; i < count; i ++) {
+                let CloneSlide = slide_normal[i].cloneNode(true)
+                slides_normal.appendChild(CloneSlide)
+            }
+            for (let i = count-1; i >= 0; i--) {
+                let CloneSlide = slide_normal[i].cloneNode(true)
+                slides_normal.prepend(CloneSlide)
+            }
+
+            let normal_now_slide = document.querySelectorAll(".normal_slide li"),
+                normal_new_count = normal_now_slide.length
+
+            slides_normal.style.width = `${normal_new_count * 100}vw`
+
+            slides_normal.style.transform = `translateX(-${count * 100}vw)`
+
+            setTimeout(function () {
+                slides_normal.classList.add("animated")
+            }, 500)
+        }
+
+        prev1.addEventListener("click", () => {
+            if (!normal_Animating) {
+                normal_moveSlide(n - 1)
+            }
+        })
+
+        next1.addEventListener("click", () => {
+            if (!normal_Animating) {
+                normal_moveSlide(n + 1)
+            }
+        })
+
+        function normal_moveSlide (e) {
+            normal_Animating = true
+            slides_normal.style.transform = `translateX(-${(count+e) * 100}vw)`
+            n = e
+            console.log(n, count)
+            if (n === count || n === -count) {
+                setTimeout(function () {
+                    slides_normal.classList.remove("animated")
+                    slides_normal.style.transform = `translateX(-${count * 100}vw)`
+                    n = 0
+                }, 400)
+                setTimeout (function () {
+                    slides_normal.classList.add("animated")
+                    normal_Animating = false
+                }, 500)
+            } else {
+                setTimeout (function () {
+                    normal_Animating = false
+                }, 400)
+            }
+        }
+
+        let slides_fade = document.querySelector(".fade_slide"),
+            slide_fade = document.querySelectorAll(".fade_slide li")
+            prev2 = document.querySelector(".prev2")
+            next2 = document.querySelector(".next2")
+            fade_count = slide_fade.length
+            k = 0
+            fade_Animating = false
+
+        fade_Clone()
+
+        function fade_Clone () {
+            for (let i = 0; i < count; i ++) {
+                let CloneSlide = slide_fade[i].cloneNode(true)
+                slides_fade.appendChild(CloneSlide)
+            }
+            for (let i = count-1; i >= 0; i--) {
+                let CloneSlide = slide_fade[i].cloneNode(true)
+                slides_fade.prepend(CloneSlide)
+            }
+
+            let fade_now_slide = document.querySelectorAll(".fade_slide li"),
+                new_fade_count = fade_now_slide.length
+
+            slides_fade.style.width = `${new_fade_count * 100}vw`
+
+            slides_fade.style.transform = `translateX(-${fade_count * 100}vw)`
+
+            setTimeout(function () {
+                slides_fade.classList.add("fade-out")
+            }, 500)
+        }
+
+        prev2.addEventListener("click", () => {
+            if (!fade_Animating && slides_fade.classList.contains("fade-out")) {
+                fade_moveSlide(k - 1)
+            }
+        })
+
+        next2.addEventListener("click", () => {
+            if (!fade_Animating && slides_fade.classList.contains("fade-out")) {
+                fade_moveSlide(k + 1)
+            }
+        })
+
+        function fade_moveSlide (d) {
+            fade_Animating = true
+            slides_fade.classList.remove("fade-out")
+            slides_fade.classList.add("fade-in")
+            setTimeout(function () {
+                slides_fade.style.transform = `translateX(-${(count+d) * 100}vw)`
+            }, 400)
+            k = d
+            console.log(k, count)
+            if (k === count || k === -count) {
+                setTimeout(function () {
+                    slides_fade.style.transform = `translateX(-${count * 100}vw)`
+                }, 400)
+                setTimeout(function() {
+                    slides_fade.classList.remove("fade-in")
+                    slides_fade.classList.add("fade-out")
+                    k = 0
+                    fade_Animating = false
+                }, 800)
+            } else {
+                setTimeout(function () {
+                    slides_fade.classList.remove("fade-in")
+                    slides_fade.classList.add("fade-out")
+                    fade_Animating = false
+                }, 800)
+            }
+        }
+    </script>
+</body>
+</html>
