@@ -471,23 +471,22 @@
         }
 
         axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=4df8d94d366f016423fff8c574a8189e&lang=${lang}`)
-                .then(function (response) {
-                    console.log(response)
-                    temp.textContent = `${(response.data.main.temp - 273.15).toFixed(2)}°C`
-                    feels_like.textContent = `${(response.data.main.feels_like - 273.15).toFixed(2)}°C`
-                    moisture.textContent = `${response.data.main.humidity}%`
-                    wind.textContent = `${response.data.wind.speed}m/s`
-                    big_weather.textContent = response.data.weather[0].description
-                    big_temp.textContent = `${(response.data.main.temp - 273.15).toFixed(2)}°C`
-                    weather_icon.src = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-                    deg.textContent = `${response.data.wind.deg}°`
-                    spd.textContent = `${response.data.wind.speed}m/s`
-                    country.textContent = "서울"
-                })
-                .catch(function (error) {
-                    console.log(error);
-                })
-                
+        .then(function (response) {
+            console.log(response)
+            temp.textContent = `${(response.data.main.temp - 273.15).toFixed(2)}°C`
+            feels_like.textContent = `${(response.data.main.feels_like - 273.15).toFixed(2)}°C`
+            moisture.textContent = `${response.data.main.humidity}%`
+            wind.textContent = `${response.data.wind.speed}m/s`
+            big_weather.textContent = response.data.weather[0].description
+            big_temp.textContent = `${(response.data.main.temp - 273.15).toFixed(2)}°C`
+            weather_icon.src = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+            deg.textContent = `${response.data.wind.deg}°`
+            spd.textContent = `${response.data.wind.speed}m/s`
+            country.textContent = "서울"
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
         
         lang_select.addEventListener("click", () => {
             if (lang_select.options.selectedIndex == 0) {
