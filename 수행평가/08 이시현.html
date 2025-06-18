@@ -166,9 +166,9 @@
         .sebujungbo {
             width: 50%;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
-            margin-top: 30px;
+            margin-top: 100px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -197,30 +197,76 @@
             border: 1px solid black;
             border-radius: 5px;
             background-color: white;
-            display: flex;
             align-items: center;
+            padding: 10px;
+            display: flex;
+        }
+
+        .min_max {
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: white;
+            align-items: center;
+            padding: 10px;
+            display: flex;
         }
         
         .wind_spd {
+            display: inline-block;
             text-align: center;
             width: 50%;
         }
 
         .wind_deg {
+            display: inline-block;
+            text-align: center;
+            width: 50%;
+        }
+
+        .temp_max {
+            display: inline-block;
+            text-align: center;
+            width: 50%;
+        }
+
+        .temp_min {
+            display: inline-block;
             text-align: center;
             width: 50%;
         }
 
         .img {
-            grid-column: 1 / 3;
-            grid-row: 2 / 4;
+            grid-column: 1 / 4;
+            grid-row: 2/4;
+            border: 1px solid white;
         }
 
         .img img {
-            width: 960px;
-            grid-column: 1/3;
-            grid-row: 2/4;
-            border-radius: 10px;
+            width: 100%;
+        }
+
+        .sunrise_time {
+            grid-column: 4/5;
+            grid-row: 2;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 5px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sunset_time {
+            grid-column: 4/5;
+            grid-row: 3;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 5px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
@@ -234,7 +280,7 @@
 
         <div class="search">
             <label>
-                <input type="text" id="search" placeholder="영어로 입력해주세요.">
+                <input type="text" id="search" placeholder="검색할 국가를 영어로 입력해주세요.">
             </label>
         </div>
 
@@ -310,17 +356,43 @@
                         <h1 class="spd"></h1>
                     </div>
                 </div>
+                <div class="min_max">
+                    <div class="temp_max">
+                        <h2 class="change_max">최고 온도</h2>
+                        <h1 class="max_tmp"></h1>
+                    </div>
+                    <div class="temp_min">
+                        <h2 class="change_min">최저 온도</h2>
+                        <h1 class="min_tmp"></h1>
+                    </div>
+                </div>
                 <div class="img">
                     <img src="https://cdn.newstof.com/news/photo/201804/675_1615_359.jpg" alt="">
                 </div>
+                <div class="sunrise_time">
+                    <div>
+                        <h2 class="change_srt">일출 시간</h2>
+                        <h1 class="srt"></h1>
+                    </div>
+                </div>
+                <div class="sunset_time">
+                    <div>
+                        <h2 class="change_sst">일몰 시간</h2>
+                        <h1 class="sst"></h1>
+                    </div>
+                </div>
             </div>
         </section>
+        <select name="" id="cntry">
+            <option value=""></option>
+        </select>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         let slides = document.querySelector(".slides")
             slide = document.querySelectorAll(".slides li"),
+            body = document.querySelector("body"),
             caution = document.querySelector(".caution")
             search = document.querySelector("#search")
             Seoul = document.querySelector(".Seoul"),
@@ -340,6 +412,10 @@
             weather_icon = document.querySelector(".weather_container img"),
             deg = document.querySelector(".deg"),
             spd = document.querySelector(".spd"),
+            max_tmp = document.querySelector(".max_tmp"),
+            min_tmp = document.querySelector(".min_tmp"),
+            srt = document.querySelector(".srt"),
+            sst = document.querySelector(".sst"),
             lang_select = document.querySelector("select"),
             change_country = document.querySelector(".change_country")
             change_temp = document.querySelector(".change_temp"),
@@ -349,6 +425,10 @@
             change_weather = document.querySelector(".change_weather"),
             change_deg = document.querySelector(".change_deg"),
             change_spd = document.querySelector(".change_spd"),
+            change_max = document.querySelector(".change_max"),
+            change_min = document.querySelector(".change_min"),
+            change_srt = document.querySelector(".change_srt"),
+            change_sst = document.querySelector(".change_sst"),
             img = document.querySelector(".img img")
             lang = "kr",
             n = 0,
@@ -356,9 +436,9 @@
 
         caution.addEventListener("click", () => {
             if (lang === "kr") {
-                alert("검색창에 입력 시 이미지는 바뀌지 않습니다.")
+                alert("검색창에 입력 시 도시 이미지는 바뀌지 않습니다.\n슬라이드를 빠르게하면 배경화면이 바뀌지 않습니다.")
             } else if (lang === "en") {
-                alert("The image does not change when you enter the search box.")
+                alert("The city image does not change when you enter the search box.\nIf you slide fast, the background image does not works.")
             }
         })
 
@@ -433,12 +513,62 @@
                     weather_icon.src = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
                     deg.textContent = `${response.data.wind.deg}°`
                     spd.textContent = `${response.data.wind.speed}m/s`
+                    max_tmp.textContent = `${(response.data.main.temp_max - 273.15).toFixed(2)}°C`
+                    min_tmp.textContent = `${(response.data.main.temp_min - 273.15).toFixed(2)}°C`
                     if (lang === "kr") {
                         change_country.textContent = "서울"
                         country.textContent = "서울"
+                        const srt_unixTimestamp = response.data.sys.sunrise; // 예시 유닉스 시간 (초 단위)
+                        const sunrise_date = new Date(srt_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const srt_options = {timeZone: `Asia/Seoul`}
+                        const srt_KR = sunrise_date.toLocaleString("ko-KR", srt_options)
+                        srt.textContent = srt_KR
+                        const sst_unixTimestamp = response.data.sys.sunset; // 예시 유닉스 시간 (초 단위)
+                        const sunset_date = new Date(sst_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const sst_options = {timeZone: `Asia/Seoul`}
+                        const sst_KR = sunset_date.toLocaleString("ko-KR", sst_options)
+                        sst.textContent = sst_KR
                     } else if (lang === "en") {
                         change_country.textContent = "Seoul"
                         country.textContent = response.data.name
+                        const srt_unixTimestamp = response.data.sys.sunrise; // 예시 유닉스 시간 (초 단위)
+                        const sunrise_date = new Date(srt_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const srt_options = {timeZone: `Asia/Seoul`}
+                        const srt_KR = sunrise_date.toLocaleString("en_US", srt_options)
+                        srt.textContent = srt_KR
+                        const sst_unixTimestamp = response.data.sys.sunset; // 예시 유닉스 시간 (초 단위)
+                        const sunset_date = new Date(sst_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const sst_options = {timeZone: `Asia/Seoul`}
+                        const sst_KR = sunset_date.toLocaleString("en_US", sst_options)
+                        sst.textContent = sst_KR
+                    }
+                    if (response.data.weather[0].icon == "11d") { // Thunderstorm
+                        body.style.backgroundImage = `url("https://static.scientificamerican.com/sciam/cache/file/144E974E-8AF8-4E08-9D4D8B2C8F5CDC14_source.jpg?crop=16%3A9%2Csmart&w=1920")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "09d") { // Drizzle
+                        body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4V5Kc8mBzFspOlm3_3KNP_VHrugBLqb_EA&s")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "10d") { // Rain
+                        body.style.backgroundImage = `url("https://static.vecteezy.com/system/resources/thumbnails/015/310/209/original/it-s-raining-on-the-golf-course-in-the-sun-there-are-lots-of-trees-and-beauty-free-video.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "13d") { // Snow
+                        body.style.backgroundImage = `url("https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/74C8/production/_132269892_sevenoaks.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "50d") { // Bad Weather (fog)
+                        body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkxgqbeey9h9FfNaCrHHnH2wqKIpLH9HCRBw&s")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "01d" || response.data.weather[0].icon == "01n") { // Clear
+                        body.style.backgroundImage = `url("https://wallpapersok.com/images/hd/bluish-orange-clear-sky-ckcbv6yqvjhcbi09.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "02d" || response.data.weather[0].icon == "02n") { // Few Clouds
+                        body.style.backgroundImage = `url("https://sonamkhetan.com/cdn/shop/files/cirrus_clouds_aspot_AdobeStock.jpg?v=1700726540&width=1920")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "03d" || response.data.weather[0].icon == "03n") { // Scattered Clouds
+                        body.style.backgroundImage = `url("https://jooinn.com/images/clouds-scattering-1.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "04d" || response.data.weather[0].icon == "04n") { // Broken Clouds && Overcast Clouds
+                        body.style.backgroundImage = `url("https://www.wallpaperflare.com/static/252/691/707/nature-clouds-overcast-sky-wallpaper.jpg")`
+                        body.style.backgroundSize = `100% 100%`
                     }
                 })
                 .catch(function (error) {
@@ -458,12 +588,62 @@
                     weather_icon.src = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
                     deg.textContent = `${response.data.wind.deg}°`
                     spd.textContent = `${response.data.wind.speed}m/s`
+                    max_tmp.textContent = `${(response.data.main.temp_max - 273.15).toFixed(2)}°C`
+                    min_tmp.textContent = `${(response.data.main.temp_min - 273.15).toFixed(2)}°C`
                     if (lang === "kr") {
                         change_country.textContent = "도쿄"
                         country.textContent = "도쿄"
+                        const srt_unixTimestamp = response.data.sys.sunrise; // 예시 유닉스 시간 (초 단위)
+                        const sunrise_date = new Date(srt_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const srt_options = {timeZone: `Asia/Tokyo`}
+                        const srt_Tokyo = sunrise_date.toLocaleString("ko-KR", srt_options)
+                        srt.textContent = srt_Tokyo
+                        const sst_unixTimestamp = response.data.sys.sunset; // 예시 유닉스 시간 (초 단위)
+                        const sunset_date = new Date(sst_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const sst_options = {timeZone: `Asia/Tokyo`}
+                        const sst_Tokyo = sunset_date.toLocaleString("ko-KR", sst_options)
+                        sst.textContent = sst_Tokyo
                     } else if (lang === "en") {
                         change_country.textContent = "Tokyo"
                         country.textContent = response.data.name
+                        const srt_unixTimestamp = response.data.sys.sunrise; // 예시 유닉스 시간 (초 단위)
+                        const sunrise_date = new Date(srt_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const srt_options = {timeZone: `Asia/Tokyo`}
+                        const srt_Tokyo = sunrise_date.toLocaleString("en-US", srt_options)
+                        srt.textContent = srt_Tokyo
+                        const sst_unixTimestamp = response.data.sys.sunset; // 예시 유닉스 시간 (초 단위)
+                        const sunset_date = new Date(sst_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const sst_options = {timeZone: `Asia/Tokyo`}
+                        const sst_Tokyo = sunset_date.toLocaleString("en-US", sst_options)
+                        sst.textContent = sst_Tokyo
+                    }
+                    if (response.data.weather[0].icon == "11d") {
+                        body.style.backgroundImage = `url("https://static.scientificamerican.com/sciam/cache/file/144E974E-8AF8-4E08-9D4D8B2C8F5CDC14_source.jpg?crop=16%3A9%2Csmart&w=1920")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "09d") {
+                        body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4V5Kc8mBzFspOlm3_3KNP_VHrugBLqb_EA&s")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "10d") {
+                        body.style.backgroundImage = `url("https://static.vecteezy.com/system/resources/thumbnails/015/310/209/original/it-s-raining-on-the-golf-course-in-the-sun-there-are-lots-of-trees-and-beauty-free-video.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "13d") {
+                        body.style.backgroundImage = `url("https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/74C8/production/_132269892_sevenoaks.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "50d") {
+                        body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkxgqbeey9h9FfNaCrHHnH2wqKIpLH9HCRBw&s")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "01d" || response.data.weather[0].icon == "01n") {
+                        body.style.backgroundImage = `url("https://wallpapersok.com/images/hd/bluish-orange-clear-sky-ckcbv6yqvjhcbi09.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "02d" || response.data.weather[0].icon == "02n") {
+                        body.style.backgroundImage = `url("https://d2rqvd0kuag1qx.cloudfront.net/blog-15.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "03d" || response.data.weather[0].icon == "03n") {
+                        body.style.backgroundImage = `url("https://jooinn.com/images/clouds-scattering-1.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "04d" || response.data.weather[0].icon == "04n") {
+                        body.style.backgroundImage = `url("https://www.wallpaperflare.com/static/252/691/707/nature-clouds-overcast-sky-wallpaper.jpg")`
+                        body.style.backgroundSize = `100% 100%`
                     }
                 })
                 .catch(function (error) {
@@ -483,12 +663,62 @@
                     weather_icon.src = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
                     deg.textContent = `${response.data.wind.deg}°`
                     spd.textContent = `${response.data.wind.speed}m/s`
+                    max_tmp.textContent = `${(response.data.main.temp_max - 273.15).toFixed(2)}°C`
+                    min_tmp.textContent = `${(response.data.main.temp_min - 273.15).toFixed(2)}°C`
                     if (lang === "kr") {
                         change_country.textContent = "로스 앤젤레스"
                         country.textContent = "로스 앤젤레스"
+                        const srt_unixTimestamp = response.data.sys.sunrise; // 예시 유닉스 시간 (초 단위)
+                        const sunrise_date = new Date(srt_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const srt_options = {timeZone: `America/Los_Angeles`}
+                        const srt_LA = sunrise_date.toLocaleString("ko-KR", srt_options)
+                        srt.textContent = srt_LA
+                        const sst_unixTimestamp = response.data.sys.sunset; // 예시 유닉스 시간 (초 단위)
+                        const sunset_date = new Date(sst_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const sst_options = {timeZone: `America/Los_Angeles`}
+                        const sst_LA = sunset_date.toLocaleString("ko-KR", sst_options)
+                        sst.textContent = sst_LA
                     } else if (lang === "en") {
                         change_country.textContent = "Los Angeles"
                         country.textContent = response.data.name
+                        const srt_unixTimestamp = response.data.sys.sunrise; // 예시 유닉스 시간 (초 단위)
+                        const sunrise_date = new Date(srt_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const srt_options = {timeZone: `America/Los_Angeles`}
+                        const srt_LA = sunrise_date.toLocaleString("en-US", srt_options)
+                        srt.textContent = srt_LA
+                        const sst_unixTimestamp = response.data.sys.sunset; // 예시 유닉스 시간 (초 단위)
+                        const sunset_date = new Date(sst_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const sst_options = {timeZone: `America/Los_Angeles`}
+                        const sst_LA = sunset_date.toLocaleString("en-US", sst_options)
+                        sst.textContent = sst_LA
+                    }
+                    if (response.data.weather[0].icon == "11d") {
+                        body.style.backgroundImage = `url("https://static.scientificamerican.com/sciam/cache/file/144E974E-8AF8-4E08-9D4D8B2C8F5CDC14_source.jpg?crop=16%3A9%2Csmart&w=1920")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "09d") {
+                        body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4V5Kc8mBzFspOlm3_3KNP_VHrugBLqb_EA&s")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "10d") {
+                        body.style.backgroundImage = `url("https://static.vecteezy.com/system/resources/thumbnails/015/310/209/original/it-s-raining-on-the-golf-course-in-the-sun-there-are-lots-of-trees-and-beauty-free-video.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "13d") {
+                        body.style.backgroundImage = `url("https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/74C8/production/_132269892_sevenoaks.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "50d") {
+                        body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkxgqbeey9h9FfNaCrHHnH2wqKIpLH9HCRBw&s")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "01d" || response.data.weather[0].icon == "01n") {
+                        body.style.backgroundImage = `url("https://wallpapersok.com/images/hd/bluish-orange-clear-sky-ckcbv6yqvjhcbi09.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "02d" || response.data.weather[0].icon == "02n") {
+                        body.style.backgroundImage = `url("https://d2rqvd0kuag1qx.cloudfront.net/blog-15.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "03d" || response.data.weather[0].icon == "03n") {
+                        body.style.backgroundImage = `url("https://jooinn.com/images/clouds-scattering-1.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "04d" || response.data.weather[0].icon == "04n") {
+                        body.style.backgroundImage = `url("https://www.wallpaperflare.com/static/252/691/707/nature-clouds-overcast-sky-wallpaper.jpg")`
+                        body.style.backgroundSize = `100% 100%`
                     }
                 })
                 .catch(function (error) {
@@ -508,12 +738,62 @@
                     weather_icon.src = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
                     deg.textContent = `${response.data.wind.deg}°`
                     spd.textContent = `${response.data.wind.speed}m/s`
+                    max_tmp.textContent = `${(response.data.main.temp_max - 273.15).toFixed(2)}°C`
+                    min_tmp.textContent = `${(response.data.main.temp_min - 273.15).toFixed(2)}°C`
                     if (lang === "kr") {
                         change_country.textContent = "런던"
                         country.textContent = "런던"
+                        const srt_unixTimestamp = response.data.sys.sunrise; // 예시 유닉스 시간 (초 단위)
+                        const sunrise_date = new Date(srt_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const srt_options = {timeZone: `Europe/London`}
+                        const srt_LD = sunrise_date.toLocaleString("ko-KR", srt_options)
+                        srt.textContent = srt_LD
+                        const sst_unixTimestamp = response.data.sys.sunset; // 예시 유닉스 시간 (초 단위)
+                        const sunset_date = new Date(sst_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const sst_options = {timeZone: `Europe/London`}
+                        const sst_LD = sunset_date.toLocaleString("ko-KR", sst_options)
+                        sst.textContent = sst_LD
                     } else if (lang === "en") {
                         change_country.textContent = "London"
                         country.textContent = response.data.name
+                        const srt_unixTimestamp = response.data.sys.sunrise; // 예시 유닉스 시간 (초 단위)
+                        const sunrise_date = new Date(srt_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const srt_options = {timeZone: `Europe/London`}
+                        const srt_LD = sunrise_date.toLocaleString("en-US", srt_options)
+                        srt.textContent = srt_LD
+                        const sst_unixTimestamp = response.data.sys.sunset; // 예시 유닉스 시간 (초 단위)
+                        const sunset_date = new Date(sst_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const sst_options = {timeZone: `Europe/London`}
+                        const sst_LD = sunset_date.toLocaleString("en-US", sst_options)
+                        sst.textContent = sst_LD
+                    }
+                    if (response.data.weather[0].icon == "11d") {
+                        body.style.backgroundImage = `url("https://static.scientificamerican.com/sciam/cache/file/144E974E-8AF8-4E08-9D4D8B2C8F5CDC14_source.jpg?crop=16%3A9%2Csmart&w=1920")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "09d") {
+                        body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4V5Kc8mBzFspOlm3_3KNP_VHrugBLqb_EA&s")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "10d") {
+                        body.style.backgroundImage = `url("https://static.vecteezy.com/system/resources/thumbnails/015/310/209/original/it-s-raining-on-the-golf-course-in-the-sun-there-are-lots-of-trees-and-beauty-free-video.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "13d") {
+                        body.style.backgroundImage = `url("https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/74C8/production/_132269892_sevenoaks.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "50d") {
+                        body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkxgqbeey9h9FfNaCrHHnH2wqKIpLH9HCRBw&s")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "01d" || response.data.weather[0].icon == "01n") {
+                        body.style.backgroundImage = `url("https://wallpapersok.com/images/hd/bluish-orange-clear-sky-ckcbv6yqvjhcbi09.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "02d" || response.data.weather[0].icon == "02n") {
+                        body.style.backgroundImage = `url("https://d2rqvd0kuag1qx.cloudfront.net/blog-15.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "03d" || response.data.weather[0].icon == "03n") {
+                        body.style.backgroundImage = `url("https://jooinn.com/images/clouds-scattering-1.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "04d" || response.data.weather[0].icon == "04n") {
+                        body.style.backgroundImage = `url("https://www.wallpaperflare.com/static/252/691/707/nature-clouds-overcast-sky-wallpaper.jpg")`
+                        body.style.backgroundSize = `100% 100%`
                     }
                 })
                 .catch(function (error) {
@@ -533,12 +813,62 @@
                     weather_icon.src = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
                     deg.textContent = `${response.data.wind.deg}°`
                     spd.textContent = `${response.data.wind.speed}m/s`
+                    max_tmp.textContent = `${(response.data.main.temp_max - 273.15).toFixed(2)}°C`
+                    min_tmp.textContent = `${(response.data.main.temp_min - 273.15).toFixed(2)}°C`
                     if (lang === "kr") {
                         change_country.textContent = "서울"
                         country.textContent = "서울"
+                        const srt_unixTimestamp = response.data.sys.sunrise; // 예시 유닉스 시간 (초 단위)
+                        const sunrise_date = new Date(srt_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const srt_options = {timeZone: `Asia/Seoul`}
+                        const srt_KR = sunrise_date.toLocaleString("ko-KR", srt_options)
+                        srt.textContent = srt_KR
+                        const sst_unixTimestamp = response.data.sys.sunset; // 예시 유닉스 시간 (초 단위)
+                        const sunset_date = new Date(sst_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const sst_options = {timeZone: `Asia/Seoul`}
+                        const sst_KR = sunset_date.toLocaleString("ko-KR", sst_options)
+                        sst.textContent = sst_KR
                     } else if (lang === "en") {
                         change_country.textContent = "Seoul"
                         country.textContent = response.data.name
+                        const srt_unixTimestamp = response.data.sys.sunrise; // 예시 유닉스 시간 (초 단위)
+                        const sunrise_date = new Date(srt_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const srt_options = {timeZone: `Asia/Seoul`}
+                        const srt_KR = sunrise_date.toLocaleString("en-US", srt_options)
+                        srt.textContent = srt_KR
+                        const sst_unixTimestamp = response.data.sys.sunset; // 예시 유닉스 시간 (초 단위)
+                        const sunset_date = new Date(sst_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const sst_options = {timeZone: `Asia/Seoul`}
+                        const sst_KR = sunset_date.toLocaleString("en-US", sst_options)
+                        sst.textContent = sst_KR
+                    }
+                    if (response.data.weather[0].icon == "11d") { // Thunderstorm
+                        body.style.backgroundImage = `url("https://static.scientificamerican.com/sciam/cache/file/144E974E-8AF8-4E08-9D4D8B2C8F5CDC14_source.jpg?crop=16%3A9%2Csmart&w=1920")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "09d") { // Drizzle
+                        body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4V5Kc8mBzFspOlm3_3KNP_VHrugBLqb_EA&s")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "10d") { // Rain
+                        body.style.backgroundImage = `url("https://static.vecteezy.com/system/resources/thumbnails/015/310/209/original/it-s-raining-on-the-golf-course-in-the-sun-there-are-lots-of-trees-and-beauty-free-video.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "13d") { // Snow
+                        body.style.backgroundImage = `url("https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/74C8/production/_132269892_sevenoaks.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "50d") { // Bad Weather (fog)
+                        body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkxgqbeey9h9FfNaCrHHnH2wqKIpLH9HCRBw&s")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "01d" || response.data.weather[0].icon == "01n") { // Clear
+                        body.style.backgroundImage = `url("https://wallpapersok.com/images/hd/bluish-orange-clear-sky-ckcbv6yqvjhcbi09.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "02d" || response.data.weather[0].icon == "02n") { // Few Clouds
+                        body.style.backgroundImage = `url("https://sonamkhetan.com/cdn/shop/files/cirrus_clouds_aspot_AdobeStock.jpg?v=1700726540&width=1920")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "03d" || response.data.weather[0].icon == "03n") { // Scattered Clouds
+                        body.style.backgroundImage = `url("https://jooinn.com/images/clouds-scattering-1.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "04d" || response.data.weather[0].icon == "04n") { // Broken Clouds && Overcast Clouds
+                        body.style.backgroundImage = `url("https://www.wallpaperflare.com/static/252/691/707/nature-clouds-overcast-sky-wallpaper.jpg")`
+                        body.style.backgroundSize = `100% 100%`
                     }
                 })
                 .catch(function (error) {
@@ -560,7 +890,47 @@
             weather_icon.src = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
             deg.textContent = `${response.data.wind.deg}°`
             spd.textContent = `${response.data.wind.speed}m/s`
+            max_tmp.textContent = `${(response.data.main.temp_max - 273.15).toFixed(2)}°C`
+            min_tmp.textContent = `${(response.data.main.temp_min - 273.15).toFixed(2)}°C`
             country.textContent = "서울"
+            const srt_unixTimestamp = response.data.sys.sunrise; // 예시 유닉스 시간 (초 단위)
+            const sunrise_date = new Date(srt_unixTimestamp * 1000); // 밀리초 단위로 변환
+            const srt_options = {timeZone: `Asia/Seoul`}
+            const srt_KR = sunrise_date.toLocaleString("ko-KR", srt_options)
+            srt.textContent = srt_KR
+            const sst_unixTimestamp = response.data.sys.sunset; // 예시 유닉스 시간 (초 단위)
+            const sunset_date = new Date(sst_unixTimestamp * 1000); // 밀리초 단위로 변환
+            const sst_options = {timeZone: `Asia/Seoul`}
+            const sst_KR = sunset_date.toLocaleString("ko-KR", sst_options)
+            sst.textContent = sst_KR
+            if (response.data.weather[0].icon == "11d") {
+                body.style.backgroundImage = `url("https://static.scientificamerican.com/sciam/cache/file/144E974E-8AF8-4E08-9D4D8B2C8F5CDC14_source.jpg?crop=16%3A9%2Csmart&w=1920")`
+                body.style.backgroundSize = `100% 100%`
+            } else if (response.data.weather[0].icon == "09d") {
+                body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4V5Kc8mBzFspOlm3_3KNP_VHrugBLqb_EA&s")`
+                body.style.backgroundSize = `100% 100%`
+            } else if (response.data.weather[0].icon == "10d") {
+                body.style.backgroundImage = `url("https://static.vecteezy.com/system/resources/thumbnails/015/310/209/original/it-s-raining-on-the-golf-course-in-the-sun-there-are-lots-of-trees-and-beauty-free-video.jpg")`
+                body.style.backgroundSize = `100% 100%`
+            } else if (response.data.weather[0].icon == "13d") {
+                body.style.backgroundImage = `url("https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/74C8/production/_132269892_sevenoaks.jpg")`
+                body.style.backgroundSize = `100% 100%`
+            } else if (response.data.weather[0].icon == "50d") {
+                body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkxgqbeey9h9FfNaCrHHnH2wqKIpLH9HCRBw&s")`
+                body.style.backgroundSize = `100% 100%`
+            } else if (response.data.weather[0].icon == "01d" || response.data.weather[0].icon == "01n") {
+                body.style.backgroundImage = `url("https://wallpapersok.com/images/hd/bluish-orange-clear-sky-ckcbv6yqvjhcbi09.jpg")`
+                body.style.backgroundSize = `100% 100%`
+            } else if (response.data.weather[0].icon == "02d" || response.data.weather[0].icon == "02n") {
+                body.style.backgroundImage = `url("https://d2rqvd0kuag1qx.cloudfront.net/blog-15.jpg")`
+                body.style.backgroundSize = `100% 100%`
+            } else if (response.data.weather[0].icon == "03d" || response.data.weather[0].icon == "03n") {
+                body.style.backgroundImage = `url("https://jooinn.com/images/clouds-scattering-1.jpg")`
+                body.style.backgroundSize = `100% 100%`
+            } else if (response.data.weather[0].icon == "04d" || response.data.weather[0].icon == "04n") {
+                body.style.backgroundImage = `url("https://www.wallpaperflare.com/static/252/691/707/nature-clouds-overcast-sky-wallpaper.jpg")`
+                body.style.backgroundSize = `100% 100%`
+            }
         })
         .catch(function (error) {
             console.log(error);
@@ -576,7 +946,11 @@
                 change_weather.textContent = "날씨"
                 change_deg.textContent = "풍향"
                 change_spd.textContent = "풍속"
+                change_max.textContent = "최고 온도"
+                change_min.textContent = "최저 온도"
                 caution.textContent = "주의사항"
+                change_srt.textContent = "일출 시간"
+                change_sst.textContent = "일몰 시간"
             } else {
                 lang = "en"
                 search.setAttribute("placeholder", "Please enter country in English")
@@ -587,7 +961,11 @@
                 change_weather.textContent = "Weather"
                 change_deg.textContent = "Degree"
                 change_spd.textContent = "Speed"
+                change_max.textContent = "Max Temp"
+                change_min.textContent = "Min Temp"
                 caution.textContent = "Caution"
+                change_srt.textContent = "Sunrise Time"
+                change_sst.textContent = "Sunset Time"
             }
         })
 
@@ -602,6 +980,59 @@
                     deg.textContent = `${response.data.wind.deg}°`
                     spd.textContent = `${response.data.wind.speed}m/s`
                     country.textContent = search.value
+                    max_tmp.textContent = `${(response.data.main.temp_max - 273.15).toFixed(2)}°C`
+                    min_tmp.textContent = `${(response.data.main.temp_min - 273.15).toFixed(2)}°C`
+                    if (lang === "kr") {
+                        const srt_unixTimestamp = response.data.sys.sunrise; // 예시 유닉스 시간 (초 단위)
+                        const sunrise_date = new Date(srt_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const srt_options = {timeZone: `Asia/Seoul`}
+                        const srt_search = sunrise_date.toLocaleString("ko-KR", srt_options)
+                        srt.textContent = srt_search
+                        const sst_unixTimestamp = response.data.sys.sunset; // 예시 유닉스 시간 (초 단위)
+                        const sunset_date = new Date(sst_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const sst_options = {timeZone: `Asia/Seoul`}
+                        const sst_search = sunset_date.toLocaleString("ko-KR", sst_options)
+                        sst.textContent = sst_search
+                    } else if (lang === "en") {
+                        const srt_unixTimestamp = response.data.sys.sunrise; // 예시 유닉스 시간 (초 단위)
+                        const sunrise_date = new Date(srt_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const srt_options = {timeZone: `Asia/Seoul`}
+                        const srt_search = sunrise_date.toLocaleString("en-US", srt_options)
+                        srt.textContent = srt_search
+                        const sst_unixTimestamp = response.data.sys.sunset; // 예시 유닉스 시간 (초 단위)
+                        const sunset_date = new Date(sst_unixTimestamp * 1000); // 밀리초 단위로 변환
+                        const sst_options = {timeZone: `Asia/Seoul`}
+                        const sst_search = sunset_date.toLocaleString("en-US", sst_options)
+                        sst.textContent = sst_search
+                    }
+                    if (response.data.weather[0].icon == "11d") { // Thunderstorm
+                        body.style.backgroundImage = `url("https://static.scientificamerican.com/sciam/cache/file/144E974E-8AF8-4E08-9D4D8B2C8F5CDC14_source.jpg?crop=16%3A9%2Csmart&w=1920")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "09d") { // Drizzle
+                        body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4V5Kc8mBzFspOlm3_3KNP_VHrugBLqb_EA&s")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "10d") { // Rain
+                        body.style.backgroundImage = `url("https://static.vecteezy.com/system/resources/thumbnails/015/310/209/original/it-s-raining-on-the-golf-course-in-the-sun-there-are-lots-of-trees-and-beauty-free-video.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "13d") { // Snow
+                        body.style.backgroundImage = `url("https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/74C8/production/_132269892_sevenoaks.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "50d") { // Bad Weather (fog)
+                        body.style.backgroundImage = `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkxgqbeey9h9FfNaCrHHnH2wqKIpLH9HCRBw&s")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "01d" || response.data.weather[0].icon == "01n") { // Clear
+                        body.style.backgroundImage = `url("https://wallpapersok.com/images/hd/bluish-orange-clear-sky-ckcbv6yqvjhcbi09.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "02d" || response.data.weather[0].icon == "02n") { // Few Clouds
+                        body.style.backgroundImage = `url("https://sonamkhetan.com/cdn/shop/files/cirrus_clouds_aspot_AdobeStock.jpg?v=1700726540&width=1920")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "03d" || response.data.weather[0].icon == "03n") { // Scattered Clouds
+                        body.style.backgroundImage = `url("https://jooinn.com/images/clouds-scattering-1.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    } else if (response.data.weather[0].icon == "04d" || response.data.weather[0].icon == "04n") { // Broken Clouds && Overcast Clouds
+                        body.style.backgroundImage = `url("https://www.wallpaperflare.com/static/252/691/707/nature-clouds-overcast-sky-wallpaper.jpg")`
+                        body.style.backgroundSize = `100% 100%`
+                    }
                 })
                 .catch(function (error) {
                     console.log(error);
