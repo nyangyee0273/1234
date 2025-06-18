@@ -939,6 +939,7 @@
         lang_select.addEventListener("click", () => {
             if (lang_select.options.selectedIndex == 0) {
                 lang = "kr"
+                search.setAttribute("placeholder", "검색할 국가를 영어로 입력해주세요.")
                 change_temp.textContent = "온도"
                 change_feels_like.textContent = "체감 온도"
                 change_moisture.textContent = "습도"
@@ -953,7 +954,7 @@
                 change_sst.textContent = "일몰 시간"
             } else {
                 lang = "en"
-                search.setAttribute("placeholder", "Please enter country in English")
+                search.setAttribute("placeholder", "Please enter country in English.")
                 change_temp.textContent = "Temperature"
                 change_feels_like.textContent = "Feels like"
                 change_moisture.textContent = "Humidity"
