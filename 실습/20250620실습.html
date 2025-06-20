@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>시간 설정<label for=""><input type="text" placeholder="초 입력" class="input"></label>초</p>
+        <button class="start">시작</button>
+        <button class="stop">정지</button>
+    </header>
+    <main>
+        <section>
+            <h1>남은 시간</h1>
+            <div>
+                <h1><span class="time">0</span>s</h1>
+            </div>
+            <h2>초 입력하고 버튼을 누르면, 입력한 시간대로 타이머가 작동한다</h2>
+            <h2>0초일 때는 시작되지 않는다</h2>
+            <h2>시작버튼을 여러 번 눌러도 중복으로 적용되지 않는다</h2>
+            <h2>정지버튼을 누르면 그자리에서 멈춘다</h2>
+        </section>
+    </main>
+
+    <script>
+        const start_btn = document.querySelector(".start")
+        const stop_btn = document.querySelector(".stop")
+        const time = document.querySelector(".time")
+        let input = document.querySelector(".input")
+        activating = false
+        let asdf
+
+        function timer () {
+            if (Number(time.textContent) > 0) {
+                time.textContent = time.textContent - 1
+                asdf = setTimeout(timer, 1000)
+            } else {
+                activating = false
+            }
+        }
+
+        start_btn.addEventListener("click", () => {
+            if (!activating && Number(input.value) > 0) {
+                time.textContent = input.value
+                activating = true
+                asdf = setTimeout(timer, 1000)
+            }
+        })
+
+        stop_btn.addEventListener("click", () => {
+            clearTimeout(asdf)
+            activating = false
+        })
+    </script>
+</body>
+</html>
