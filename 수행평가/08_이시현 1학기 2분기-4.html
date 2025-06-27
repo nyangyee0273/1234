@@ -981,6 +981,7 @@
                     deg.textContent = `${response.data.wind.deg}°`
                     spd.textContent = `${response.data.wind.speed}m/s`
                     country.textContent = search.value
+                    search.value = ""
                     max_tmp.textContent = `${(response.data.main.temp_max - 273.15).toFixed(2)}°C`
                     min_tmp.textContent = `${(response.data.main.temp_min - 273.15).toFixed(2)}°C`
                     if (lang === "kr") {
@@ -1037,7 +1038,12 @@
                 })
                 .catch(function (error) {
                     console.log(error);
-                    alert("존재하지 않는 도시 이름입니다.")
+                    search.value = ""
+                    if (lang === "kr") {
+                        alert("존재하지 않는 도시 이름입니다.")
+                    } else if (lang ==="en") {
+                        alert("That country is not exist")
+                    }
                 })
             }
         })
