@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let now = new Date()
+        console.log(now)
+
+        console.log(`getFullyear : ${now.getFullYear()}`)
+        console.log(`getMonth : ${now.getMonth()}`)
+        console.log(`getDay : ${now.getDay()}`)
+        console.log(`getDate : ${now.getDate()}`)
+
+        now.setFullYear(2025)
+        now.setMonth(4)
+        now.setDate(9)
+        console.log(now)
+
+        console.log(now.toLocaleDateString())
+
+        console.log(`getHours 시간 : ${now.getHours()}`)
+        console.log(`getHours 분 : ${now.getMinutes()}`)
+        console.log(`getHours 초 : ${now.getSeconds()}`)
+
+        console.log(`getTime() : ${now.getTime() / 1000 / 3600 / 24 / 365}`)
+        console.log(`now() : ${Date.now() / 1000 / 3600 / 24 / 365}`)
+        console.log(now.toLocaleTimeString())
+
+        console.log(now.toISOString())
+
+        let today = new Date()
+
+        let past = new Date()
+        past.setFullYear(2007)
+        past.setMonth(1)
+        past.setDate(9)
+
+        let time = today.getTime() - past.getTime()
+        console.log(time / 1000 / 3600 / 24)
+    </script>
+</body>
+</html>
