@@ -83,7 +83,7 @@
 
         .nick-right-top {
             font-size: 20pt;
-            font-weight: 700;
+            font-weight: 900;
         }
 
         .nick-right-top .nickname {
@@ -232,8 +232,8 @@
                         <br>
                         승률
                         <span class="rate">100%</span> / 
-                        <span class="win">100</span>승
-                        <span class="lose">0</span>패
+                        <span class="wins">100</span>승
+                        <span class="loses">0</span>패
                     </div>
                 </div>
             </div>
@@ -241,7 +241,7 @@
             <!-- 2. 20개 게임 요약한 부분 -->
             <div class="matches">
                 <div class="matches-left">
-                    승률 <span class="rate">100%</span> <span class="win">100</span>승 <span>0</span>패
+                    승률 <span class="rate">100%</span> <span class="wins">100</span>승 <span class="loses">0</span>패
                     <br>
                     <span class="kill">10</span> / <span class="death">0</span> / <span class="assist">10</span>
                     <br>
@@ -265,123 +265,31 @@
 
         <!-- 20개 게임들 -->
         <div class="games">
-            <!-- 게임 정보 -->
-            <div class="game win">
-                <!-- 왼쪽 -->
-                <div class="game-left">
-                    <p class="queue">솔로랭크</p>
-                    <p class="sp">승리</p>
-                </div>
-
-                <!-- 가운데 -->
-                <div class="game-middle1">
-                    <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt="" class="champ">
-                    <span class="level">Lv.5</span>
-                    <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/perk/8005.png?image=q_auto:good,f_webp,w_56,h_56&v=1515" alt="" class="rune1">
-                    <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/perkStyle/8100.png?image=q_auto:good,f_webp,w_56,h_56&v=1515" alt="" class="rune2">
-                    <img src="https://opgg-com-image.akamaized.net/attach/images/20220325121953.2050130.jpg" alt="" class="spell1">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbe3361Srvskt7t-CmhFLPyGWtmIk11waTEQ&s" alt="" class="spell2">
-                    <span class="multi">펜타킬</span>
-                    <div class="items">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IDSEb9ZYuYcxsyBLSKoQ8Odct2JOaPJxNQ&s" alt="" class="item1">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IDSEb9ZYuYcxsyBLSKoQ8Odct2JOaPJxNQ&s" alt="" class="item2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IDSEb9ZYuYcxsyBLSKoQ8Odct2JOaPJxNQ&s" alt="" class="item3">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IDSEb9ZYuYcxsyBLSKoQ8Odct2JOaPJxNQ&s" alt="" class="item4">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IDSEb9ZYuYcxsyBLSKoQ8Odct2JOaPJxNQ&s" alt="" class="item5">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IDSEb9ZYuYcxsyBLSKoQ8Odct2JOaPJxNQ&s" alt="" class="item6">
-                    </div>
-                </div>
-                <div class="game-middle2">
-                    <p class="kda"><span class="kill">20</span> / <span class="death">0</span> / <span class="assist">5</span></p>
-                    <p>평점 <span class="rating">Perfect</span></p>
-                    <span class="cs">200</span>CS
-                </div>
-
-                <!-- 오른쪽 -->
-                <div class="game-right">
-                    <div class="team1">
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임1</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임2</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임3</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임4</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임5</span></p>
-                    </div>
-                    <div class="team2">
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임6</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임7</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임8</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임9</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임10</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="game lose">
-                <!-- 왼쪽 -->
-                <div class="game-left">
-                    <p class="queue">솔로랭크</p>
-                    <p class="sp">패배</p>
-                </div>
-
-                <!-- 가운데 -->
-                <div class="game-middle1">
-                    <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt="" class="champ">
-                    <span class="level">Lv.5</span>
-                    <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/perk/8005.png?image=q_auto:good,f_webp,w_56,h_56&v=1515" alt="" class="rune1">
-                    <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/perkStyle/8100.png?image=q_auto:good,f_webp,w_56,h_56&v=1515" alt="" class="rune2">
-                    <img src="https://opgg-com-image.akamaized.net/attach/images/20220325121953.2050130.jpg" alt="" class="spell1">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbe3361Srvskt7t-CmhFLPyGWtmIk11waTEQ&s" alt="" class="spell2">
-                    <span class="multi">펜타킬</span>
-                    <div class="items">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IDSEb9ZYuYcxsyBLSKoQ8Odct2JOaPJxNQ&s" alt="" class="item1">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IDSEb9ZYuYcxsyBLSKoQ8Odct2JOaPJxNQ&s" alt="" class="item2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IDSEb9ZYuYcxsyBLSKoQ8Odct2JOaPJxNQ&s" alt="" class="item3">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IDSEb9ZYuYcxsyBLSKoQ8Odct2JOaPJxNQ&s" alt="" class="item4">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IDSEb9ZYuYcxsyBLSKoQ8Odct2JOaPJxNQ&s" alt="" class="item5">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IDSEb9ZYuYcxsyBLSKoQ8Odct2JOaPJxNQ&s" alt="" class="item6">
-                    </div>
-                </div>
-                <div class="game-middle2">
-                    <p class="kda"><span class="kill">20</span> / <span class="death">0</span> / <span class="assist">5</span></p>
-                    <p>평점 <span class="rating">Perfect</span></p>
-                    <span class="cs">200</span>CS
-                </div>
-
-                <!-- 오른쪽 -->
-                <div class="game-right">
-                    <div class="team1">
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임1</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임2</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임3</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임4</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임5</span></p>
-                    </div>
-                    <div class="team2">
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임6</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임7</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임8</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임9</span></p>
-                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/Kindred.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>닉네임10</span></p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        const API_KEY = "RGAPI-fb93e8c5-13ff-4053-87b0-d733d7631f33"
+        const API_KEY = "RGAPI-f93fd0a7-24be-407c-8f70-547c22bbce34"
         let puuid
+        let matches_list
+        let game_kills = 0
+        let game_deaths = 0
+        let game_assists = 0
 
         const btn = document.querySelector(".btn")
         const search = document.querySelector(".search")
         const id = document.querySelector(".id")
         const tag = document.querySelector(".tag")
         const level = document.querySelector(".nick-level")
-        const win = document.querySelector(".win")
-        const lose = document.querySelector(".lose")
-        const rate = document.querySelector(".rate")
+        const tier_img = document.querySelector(".tier")
+        const wins = document.querySelectorAll(".wins")
+        const loses = document.querySelectorAll(".loses")
+        const rate = document.querySelectorAll(".rate")
+        const kill = document.querySelectorAll(".kill")
+        const death = document.querySelectorAll(".death")
+        const assist = document.querySelectorAll(".assist")
         const profile_img = document.querySelector(".profile-image")
 
         btn.addEventListener("click", async () => {
@@ -395,8 +303,8 @@
                 // ACCOUNT-V1 에서 puuid 받아오기
                 await axios.get(`https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${summoner_id}/${summoner_tag}?api_key=${API_KEY}`)
                     .then(function (response) {
-                        id.textContent = summoner_id
-                        tag.textContent = summoner_tag
+                        id.textContent = response.data.gameName
+                        tag.textContent = response.data.tagLine
                         puuid = response.data.puuid
                         console.log(response);
                         console.log(puuid)
@@ -421,9 +329,16 @@
                 // LEAGUE-v4 에서 랭크 게임 정보 받아오기
                 await axios.get(`https://kr.api.riotgames.com/lol/league/v4/entries/by-puuid/${puuid}?api_key=${API_KEY}`)
                     .then(function (response) {
-                        win.textContent = response.data[0].wins
-                        lose.textContent = response.data[0].losses
-                        rate.textContent = `${((response.data[0].wins / (response.data[0].losses + response.data[0].wins)) * 100).toFixed(0)}%`
+                        wins.forEach((element) => {
+                            element.textContent = response.data[0].wins
+                        })
+                        loses.forEach((element) => {
+                            element.textContent = response.data[0].losses
+                        })
+                        rate.forEach((element) => {
+                            element.textContent = `${((response.data[0].wins / (response.data[0].wins + response.data[0].losses))*100).toFixed(2)}%`
+                        })
+                        tier_img.src = `https://opgg-static.akamaized.net/images/medals_new/${response.data[0].tier.toLowerCase()}.png`
                         console.log(response);
                     })
                     .catch(function (error) {
@@ -431,24 +346,107 @@
                     })
 
                 // MATCH-V5 에서 게임 정보 받아오기
-                await axios.get(`https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=20&api_key=${API_KEY}`)
-                    .then(function (response) {
-                        console.log(response);
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    })
-            }
-        })
+                game_20()
 
-        // 매치 정보 받아오기
-        axios.get(`https://asia.api.riotgames.com/lol/match/v5/matches/KR_7737737771?api_key=${API_KEY}`)
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
+                async function game_20() {
+                    await axios.get(`https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=20&api_key=${API_KEY}`)
+                        .then(async function (response) {
+                            let games = response.data
+
+                            // 매치 정보 받아오기
+                            for (let i = 0; i < 20; i++) {
+                                await game_info(games[i])
+                            }
+
+                            kill.textContent = game_kills
+                            death.textContent = game_deaths
+                            assist.textContent = game_assists
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        })
+                }
+
+                async function game_info(match_id) {
+                    await axios.get(`https://asia.api.riotgames.com/lol/match/v5/matches/${match_id}?api_key=${API_KEY}`)
+                        .then(function (response) {
+                            console.log(response);
+
+                            let my_id
+                            for (i=0; i<10; i++) {
+                                if (response.data.metadata.participants[i] == puuid) {
+                                    my_id = i
+                                    console.log(my_id)
+                                }
+                            }
+
+                            const parent = document.querySelector(".games")
+                            let game = document.createElement("div")
+                            game.classList.add("game")
+
+                            let 승리여부
+                            if (response.data.info.participants[my_id].win == true) {
+                                game.classList.add("win")
+                                승리여부 = "승리"
+                            } else {
+                                game.classList.add("lose")
+                                승리여부 = "패배"
+                            }
+
+                            game.innerHTML = 
+                                `<div class="game-left">
+                                    <p class="queue">${response.data.info.gameMode}</p>
+                                    <p class="sp">${승리여부}</p>
+                                </div>
+
+                                <div class="game-middle1">
+                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${response.data.info.participants[my_id].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt="" class="champ">
+                                    <span class="level">${response.data.info.participants[my_id].champLevel}</span>
+                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/perk/${response.data.info.participants[my_id].perks.styles[0].selections[0].perk}.png?image=q_auto:good,f_webp,w_56,h_56&v=1515" alt="" class="rune1">
+                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/perkStyle/${response.data.info.participants[my_id].perks.styles[1].style}.png?image=q_auto:good,f_webp,w_56,h_56&v=1515" alt="" class="rune2">
+                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/15.15.1/spell/SummonerSmite.png?image=q_auto:good,f_webp,w_64,h_64&v=1515" alt="" class="spell1">
+                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/15.15.1/spell/SummonerFlash.png?image=q_auto:good,f_webp,w_64,h_64&v=1515" alt="" class="spell2">
+                                    <span class="multi">${"펜타킬"}</span>
+                                    <div class="items">
+                                        <img src="https://opgg-static.akamaized.net/meta/images/lol/15.15.1/item/${response.data.info.participants[my_id].item0}.png?image=q_auto:good,f_webp,w_64,h_64&v=1515" alt="" class="item1">
+                                        <img src="https://opgg-static.akamaized.net/meta/images/lol/15.15.1/item/${response.data.info.participants[my_id].item1}.png?image=q_auto:good,f_webp,w_64,h_64&v=1515" alt="" class="item2">
+                                        <img src="https://opgg-static.akamaized.net/meta/images/lol/15.15.1/item/${response.data.info.participants[my_id].item2}.png?image=q_auto:good,f_webp,w_64,h_64&v=1515" alt="" class="item3">
+                                        <img src="https://opgg-static.akamaized.net/meta/images/lol/15.15.1/item/${response.data.info.participants[my_id].item3}.png?image=q_auto:good,f_webp,w_64,h_64&v=1515" alt="" class="item4">
+                                        <img src="https://opgg-static.akamaized.net/meta/images/lol/15.15.1/item/${response.data.info.participants[my_id].item4}.png?image=q_auto:good,f_webp,w_64,h_64&v=1515" alt="" class="item5">
+                                        <img src="https://opgg-static.akamaized.net/meta/images/lol/15.15.1/item/${response.data.info.participants[my_id].item5}.png?image=q_auto:good,f_webp,w_64,h_64&v=1515" alt="" class="item6">
+                                    </div>
+                                </div>
+                                <div class="game-middle2">
+                                    <p class="kda"><span class="kill">${response.data.info.participants[my_id].kills}</span> / <span class="death">${response.data.info.participants[my_id].deaths}</span> / <span class="assist">${response.data.info.participants[my_id].assists}</span></p>
+                                    <p>평점 <span class="rating">${(response.data.info.participants[my_id].challenges.kda).toFixed(1)}</span></p>
+                                    <span class="cs">${response.data.info.participants[my_id].totalMinionsKilled + response.data.info.participants[my_id].totalEnemyJungleMinionsKilled + response.data.info.participants[my_id].totalAllyJungleMinionsKilled}</span>CS
+                                </div>
+
+                                <div class="game-right">
+                                    <div class="team1">
+                                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${response.data.info.participants[0].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>${response.data.info.participants[0].riotIdGameName}</span></p>
+                                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${response.data.info.participants[1].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>${response.data.info.participants[1].riotIdGameName}</span></p>
+                                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${response.data.info.participants[2].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>${response.data.info.participants[2].riotIdGameName}</span></p>
+                                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${response.data.info.participants[3].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>${response.data.info.participants[3].riotIdGameName}</span></p>
+                                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${response.data.info.participants[4].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>${response.data.info.participants[4].riotIdGameName}</span></p>
+                                    </div>
+                                    <div class="team2">
+                                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${response.data.info.participants[5].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>${response.data.info.participants[5].riotIdGameName}</span></p>
+                                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${response.data.info.participants[6].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>${response.data.info.participants[6].riotIdGameName}</span></p>
+                                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${response.data.info.participants[7].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>${response.data.info.participants[7].riotIdGameName}</span></p>
+                                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${response.data.info.participants[8].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>${response.data.info.participants[8].riotIdGameName}</span></p>
+                                        <p><img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${response.data.info.participants[9].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515" alt=""><span>${response.data.info.participants[9].riotIdGameName}</span></p>
+                                    </div>
+                                </div>`
+                                parent.appendChild(game)
+                        })
+                        .catch(function (error) {
+                            console.log(match_id);
+                            console.log(error);
+                        })
+                    }
+                }
+        })
     </script>
 </body>
 </html>
