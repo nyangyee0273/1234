@@ -385,6 +385,8 @@
                             for (i = 0; i < 3; i++) {
                                 game_20_champ[i].src = `https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${recent_champ[i]}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_160,h_160&v=1515`
                             }
+
+                            recent_champ.splice(0, 20)
                         })
                         .catch(function (error) {
                             console.log(error);
@@ -468,7 +470,7 @@
                                 </div>
                                 <div class="game-middle2">
                                     <p class="kda"><span class="kill">${response.data.info.participants[my_id].kills}</span> / <span class="death">${response.data.info.participants[my_id].deaths}</span> / <span class="assist">${response.data.info.participants[my_id].assists}</span></p>
-                                    <p>평점 <span class="rating">${response.data.info.participants[my_id].gameMode = ("CLASSIC") ? (response.data.info.participants[my_id].challenges.kda).toFixed(1) : ((response.data.info.participants[my_id].kills + response.data.info.participants[my_id].assists) / response.data.info.participants[my_id].deaths).toFixed(1)}</span></p>
+                                    <p>평점 <span class="rating">${response.data.info.participants[my_id].gameMode === "CLASSIC" ? (response.data.info.participants[my_id].challenges?.kda !== undefined ? response.data.info.participants[my_id].challenges.kda.toFixed(1) : ((response.data.info.participants[my_id].kills + response.data.info.participants[my_id].assists) / Math.max(response.data.info.participants[my_id].deaths, 1)).toFixed(1)) : ((response.data.info.participants[my_id].kills + response.data.info.participants[my_id].assists) / Math.max(response.data.info.participants[my_id].deaths, 1)).toFixed(1)}</span></p>
                                     <span class="cs">${response.data.info.participants[my_id].totalMinionsKilled + response.data.info.participants[my_id].totalEnemyJungleMinionsKilled + response.data.info.participants[my_id].totalAllyJungleMinionsKilled}</span>CS
                                 </div>
 
