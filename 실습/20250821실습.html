@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <!-- Development version -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <!-- Production version -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: orange;
+        }
+
+        form {
+            padding: 50px;
+            background-color: white;
+            box-shadow: 5px 5px 5px gray;
+            border-radius: 30px;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .head {
+            display: inline-block;
+            width: 200px;
+        }
+
+        #Checkbox {
+            margin-right: 30px;
+        }
+
+        .mb-3 {
+            display: flex;
+        }
+
+        .radioCheckbox {
+            display: flex;
+        }
+
+        .box {
+            margin-right: 30px;
+        }
+
+        .name {
+            width: 450px;
+        }
+
+        .first {
+            margin-right: 2svw;
+        }
+
+        .checkboxContainer {
+            display: flex;
+            margin-left: -25px;
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <legend><h1>회원가입</h1></legend>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">이용 약관 안내</button>
+
+        <br>
+        <br>
+
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">이용 약관</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi porro explicabo ipsam voluptatibus at autem accusamus blanditiis saepe alias, quo optio incidunt similique hic. Nam repudiandae natus facere distinctio culpa!</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputID" class="form-label head">ID</label>
+            <input type="ID" class="form-control" id="exampleInputID" aria-describedby="IDHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label head">비밀번호</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label head">비밀번호 확인</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label head">이름</label>
+            <input type="text" aria-label="First name" class="form-control name first" placeholder="First name">
+            <input type="text" aria-label="Last name" class="form-control name" placeholder="Last name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label head">연락처</label>
+            <input type="tel" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label head">성별</label>
+            <div>
+                <div class="mb-3 form-check">
+                    <input type="radio" class="form-check-input" id="gender" name="gender" checked>
+                    <label class="form-check-label" for="gender">남</label>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="radio" class="form-check-input" id="gender" name="gender">
+                    <label class="form-check-label" for="gender">여</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="checkboxContainer">
+            <label for="" class="form-check head">취미</label>
+            <div class="form-check radioCheckbox">
+                <div class="form-check box">
+                    <input class="form-check-input" type="checkbox" name="checkboxDefault" id="checkboxDefault1">
+                    <label class="form-check-label" for="checkboxDefault1">
+                    게임
+                    </label>
+                </div>
+                <div class="form-check box">
+                    <input class="form-check-input" type="checkbox" name="checkboxDefault" id="checkboxDefault1">
+                    <label class="form-check-label" for="checkboxDefault1">
+                    운동
+                    </label>
+                </div>
+                <div class="form-check box">
+                    <input class="form-check-input" type="checkbox" name="checkboxDefault" id="checkboxDefault1">
+                    <label class="form-check-label" for="checkboxDefault1">
+                    독서
+                    </label>
+                </div>
+                <div class="form-check box">
+                    <input class="form-check-input" type="checkbox" name="checkboxDefault" id="checkboxDefault1">
+                    <label class="form-check-label" for="checkboxDefault1">
+                    음악
+                    </label>
+                </div>
+                <div class="form-check box">
+                    <input class="form-check-input" type="checkbox" name="checkboxDefault" id="checkboxDefault1">
+                    <label class="form-check-label" for="checkboxDefault1">
+                    여행
+                    </label>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">로봇이 아닙니다</label>
+        </div>
+        <button type="button" class="btn btn-primary" id="liveToastBtn">회원 가입</button>
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="https://i.namu.wiki/i/OxPAydT_4-JlzS1-SK2Hh36xlqk6d8kuZEWCg4P4kaGPo5ppsKJTqU-Nk_LIqFubuGMsYBlHDqQLb3F6B-k1Kg.webp" class="rounded me-2" alt="">
+                    <strong class="me-auto">가입 완료 안내</strong>
+                    <small>1 sec ago</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                제출이 완료되었습니다.
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+
+        if (toastTrigger) {
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+            toastTrigger.addEventListener('click', () => {
+                toastBootstrap.show()
+            })
+        }
+    </script>
+</body>
+</html>
