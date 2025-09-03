@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이핑 게임 프로젝트</title>
+    <style>
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        header {
+            background-color: cornflowerblue;
+            width: 100%;
+            color: white;
+            font-size: 25pt;
+            text-align: center;
+        }
+
+        .text {
+            font-size: 40pt;
+        }
+
+        input {
+            width: 500px;
+            height: 50px;
+            font-size: 15pt;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        button {
+            width: 300px;
+            height: 50px;
+            background-color: chocolate;
+            color: white;
+            font-size: 20pt;
+            font-weight: 900;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .board {
+            height: 50px;
+            margin: 50px;
+            font-size: 20pt;
+        }
+
+        .board .time {
+            font-size: 35pt;
+        }
+
+        .board .score {
+            font-size: 35pt;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <h1>타이핑 마스터</h1>
+        </header>
+    
+        <h1 class="text">
+            타이핑 할 글씨
+        </h1>
+    
+        <input type="text" placeholder="입력하세요">
+    
+        <div class="board">
+            남은 시간 : <span class="time">0</span>초 /
+            점수 : <span class="score">0</span>점
+        </div>
+    
+        <button>게임 시작</button>
+    </div>
+
+
+    <script>
+        const text = [
+            "대태준",
+            "말황 박태준",
+            "니코좌",
+            "나피리의 주인",
+            "초월자 태준",
+            "태준 매직",
+            "박태준신",
+            "원딜지배자 태준",
+            "미드포식자 태준",
+            "탑의 파괴자 태준",
+            "롤의 황태자",
+            "강철 주먹 태준",
+            "변신술사 태준",
+            "불멸의 태준좌",
+            "라인전의 종결자",
+            "태준이 곧 메타다",
+            "유일신 태준"
+        ]
+
+        const startBtn = document.querySelector("button")
+        const leftTime = document.querySelector(".time")
+        let isStarted = false
+
+        startBtn.addEventListener("click", () => {
+            console.log("게임 시작 버튼 눌림")
+            
+            leftTime.textContent = 5
+            
+            if (!isStarted) {
+                isStarted = true
+
+                let count
+                count = setInterval(() => {
+                    leftTime.textContent -= 1
+        
+                    if (leftTime.textContent == 0) {
+                    clearInterval(count)
+                    isStarted = false
+                    }
+                }, 1000)
+            }
+        })
+
+        document.addEventListener("keypress", (e) => {
+            console.log(e)
+        })
+    </script>
+</body>
+</html>

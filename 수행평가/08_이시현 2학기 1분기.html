@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <title>Blog Home - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            @font-face {
+                font-family: 'NexonMaplestory';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff');
+                font-weight: 300;
+                font-display: swap;
+            }
+
+            * {
+                font-family: 'NexonMaplestory';
+            }
+
+            header {
+                background-image: url("https://i.ytimg.com/vi/ArFkvhHvLsE/maxresdefault.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">AI COM</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page header with logo and tagline-->
+        <header class="py-5 bg-light border-bottom mb-4">
+            <div class="container">
+                <div class="text-center my-5">
+                    <h1 class="fw-bolder" style="color: coral;">부트스트랩으로 블로그 만들기</h1>
+                    <p class="lead mb-0" style="color: coral;">이 정도면 만점 각이다</p>
+                </div>
+            </div>
+        </header>
+        <!-- Page content-->
+        <div class="container">
+            <div class="row">
+                <!-- Blog entries-->
+                <div class="col-lg-8">
+                    <!-- Featured blog post-->
+                    <div class="card mb-4">
+                        <a href="#!"><img class="card-img-top" src="https://i.namu.wiki/i/K9fvWF5RcJ9cKvwB007Vwmgu8Vp2H2bmwmZOoefr_dmNdSf301FGQLEEcpLf9Oaf-Iz3d3vmR9L7k_lkMcSpqEmnluhyRI_ns8KXzOloqqm9xWpmMINfY4gFNkatLI9PL3k-_DREwYZIDNc9eLUp-Q.webp" alt="cipher"/></a>
+                        <div class="card-body">
+                            <div class="small text-muted">붕괴 스타레일</div>
+                            <h2 class="card-title">사이퍼</h2>
+                            <p class="card-text">뽑고 싶었는데</p>
+
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                            정보 보기
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">사이퍼</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            고양이 귀는 언제나 귀엽다
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                            <button type="button" class="btn btn-primary">확인</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Nested row for non-featured blog posts-->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Blog post-->
+                            <div class="card mb-4">
+                                <a href="#!"><img class="card-img-top" src="https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/203003.jpg" alt="kindred"/></a>
+                                <div class="card-body">
+                                    <div class="small text-muted">리그 오브 레전드</div>
+                                    <h2 class="card-title h4">킨드레드</h2>
+                                    <p class="card-text">영혼의 꽃 킨드레드</p>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                    정보 보기
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">킨드레드</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    그냥 최애 픽
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                                    <button type="button" class="btn btn-primary">확인</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Blog post-->
+                            <div class="card mb-4">
+                                <a href="#!"><img class="card-img-top" src="https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/555009.jpg" alt="pyke" /></a>
+                                <div class="card-body">
+                                    <div class="small text-muted">리그 오브 레전드</div>
+                                    <h2 class="card-title h4">파이크</h2>
+                                    <p class="card-text">핏빛 달 파이크</p>
+
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                                    정보 보기
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">파이크</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    궁 찍을 때 나오는 소리, 쾌감이 지리는 챔피언
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                                    <button type="button" class="btn btn-primary">확인</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- Blog post-->
+                            <div class="card mb-4">
+                                <a href="#!"><img class="card-img-top" src="https://mblogthumb-phinf.pstatic.net/MjAxOTA5MjhfMjIz/MDAxNTY5NjUzMDIzMzE1.FBhCwnd5zlWRKNOC-OpaJ4TlApPKX-OI8mMfgVingpwg.lgIb52Ir88GrACHdzj06gWsNrVYlenRcVk_L__RzCTYg.PNG.tlrkdl3/1.png?type=w800" alt="ashe" /></a>
+                                <div class="card-body">
+                                    <div class="small text-muted">리그 오브 레전드</div>
+                                    <h2 class="card-title h4">애쉬</h2>
+                                    <p class="card-text">하이 눈 애쉬</p>
+
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                                    정보 보기
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">애쉬</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    슬로우를 기반으로 카이팅하는 맛이 일품인 원딜 1픽 챔피언
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                                    <button type="button" class="btn btn-primary">확인</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Blog post-->
+                            <div class="card mb-4">
+                                <a href="#!"><img class="card-img-top" src="https://mblogthumb-phinf.pstatic.net/MjAxOTA3MjVfMTQz/MDAxNTY0MDMxNDkwMTAz.4_TX-oL6ZewbJXe-5OmkOAjdpq7JFCtg5UF7Y_W--5gg.-vnNApqCLaMd-kCr97mhc09lW3aJkubSHUy7LVfkiKUg.PNG.114632/q2.PNG?type=w800" alt="irelia" /></a>
+                                <div class="card-body">
+                                    <div class="small text-muted">리그 오브 레전드</div>
+                                    <h2 class="card-title h4">이렐리아</h2>
+                                    <p class="card-text">프레스티지 프로젝트 이렐리아</p>
+
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                                    정보 보기
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">이렐리아</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Q 타는 맛이 일품인 챔피언
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                                    <button type="button" class="btn btn-primary">확인</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Side widgets-->
+                <div class="col-lg-4">
+                    <!-- Search widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">하고 싶은 말</div>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="하고 싶은 말을 입력해주세요." aria-label="하고 싶은 말을 입력해주세요." aria-describedby="button-search"/>
+                                <button class="btn btn-primary" id="liveToastBtn7" type="button">입력!</button>
+
+                                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                    <div id="liveToast7" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="500">
+                                        <div class="toast-header">
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS14zOoEl-xk0OltsH1o7xtehvroXWbvnDvuw&s" class="rounded me-2" alt="maple" style="width: 30px; height: 30px;">
+                                            <strong class="me-auto">감사의 말</strong>
+                                            <small>1 sec ago</small>
+                                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                        </div>
+                                        <div class="toast-body">
+                                            한마디 감사합니다!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Categories widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">Favorite Games</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li>
+                                            <a href="#!" id="liveToastBtn1">Maple Story</a>
+
+                                            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                                <div id="liveToast1" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="500">
+                                                    <div class="toast-header">
+                                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMIA7tby2MbeTOO6dRhGasBWcrbyEhf13-ag&s" class="rounded me-2" alt="maple" style="width: 30px; height: 30px;">
+                                                        <strong class="me-auto">메이플스토리</strong>
+                                                        <small>1 sec ago</small>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="toast-body">
+                                                        검은 마법사 때려잡기
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#!" id="liveToastBtn2">League of Legends</a>
+
+                                            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                                <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="500">
+                                                    <div class="toast-header">
+                                                        <img src="https://w7.pngwing.com/pngs/1016/1000/png-transparent-league-of-legends-computer-icons-ongamenet-starleague-video-game-electronic-sports-voice-actor-video-game-desktop-wallpaper-online-game-thumbnail.png" class="rounded me-2" alt="maple" style="width: 30px; height: 30px;">
+                                                        <strong class="me-auto">리그 오브 레전드</strong>
+                                                        <small>1 sec ago</small>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="toast-body">
+                                                        적 팀 때려잡기
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#!" id="liveToastBtn3">Honkai Starrail</a>
+
+                                            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                                <div id="liveToast3" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="500">
+                                                    <div class="toast-header">
+                                                        <img src="https://upload.wikimedia.org/wikipedia/ko/4/4d/%EB%B6%95%EA%B4%B4_%EC%8A%A4%ED%83%80%EB%A0%88%EC%9D%BC_%EB%A1%9C%EA%B3%A0.png" class="rounded me-2" alt="maple" style="width: 30px; height: 30px;">
+                                                        <strong class="me-auto">붕괴 스타레일</strong>
+                                                        <small>1 sec ago</small>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="toast-body">
+                                                        턴제로 때려잡기
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li>
+                                            <a href="#!" id="liveToastBtn4">Eternal Return</a>
+
+                                            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                                <div id="liveToast4" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="500">
+                                                    <div class="toast-header">
+                                                        <img src="https://cdn.playeternalreturn.com/2025%2F08%2F19%2F1755601606428-%EB%A1%A0%EC%9A%B8%ED%94%84.png" class="rounded me-2" alt="maple" style="width: 30px; height: 30px;">
+                                                        <strong class="me-auto">이터널 리턴</strong>
+                                                        <small>1 sec ago</small>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="toast-body">
+                                                        23팀 때려잡기
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#!" id="liveToastBtn5">Valorant</a>
+
+                                            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                                <div id="liveToast5" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="500">
+                                                    <div class="toast-header">
+                                                        <img src="https://opgg-com-image.akamaized.net/attach/images/20200914103331.938397.jpg" class="rounded me-2" alt="maple" style="width: 30px; height: 30px;">
+                                                        <strong class="me-auto">발로란트</strong>
+                                                        <small>1 sec ago</small>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="toast-body">
+                                                        총으로 때려잡기
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#!" id="liveToastBtn6">Wuthering Waves</a>
+
+                                            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                                <div id="liveToast6" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="500">
+                                                    <div class="toast-header">
+                                                        <img src="https://i.namu.wiki/i/qad7RmT_ZvhOeo0lbhZQQFjJ-AI0AhC0E56ADjyFpSu0OUoahm6zDy-CsggD8B4GIL01GlZsAfEj5nmD84gU1A.webp" class="rounded me-2" alt="maple" style="width: 30px; height: 30px;">
+                                                        <strong class="me-auto">명조</strong>
+                                                        <small>1 sec ago</small>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="toast-body">
+                                                        에코 때려잡기
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Side widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">About Coding</div>
+                        <div class="card-body">
+                            내 눈엔 완벽해 보이는데 코드 실행 누르면 에러 뜨면 키보드 부숴버리고 싶음.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script>
+            const myModal = document.getElementById('myModal')
+            const myInput = document.getElementById('myInput')
+            const toastTrigger1 = document.getElementById('liveToastBtn1')
+            const toastLiveExample1 = document.getElementById('liveToast1')
+            const toastTrigger2 = document.getElementById('liveToastBtn2')
+            const toastLiveExample2 = document.getElementById('liveToast2')
+            const toastTrigger3 = document.getElementById('liveToastBtn3')
+            const toastLiveExample3 = document.getElementById('liveToast3')
+            const toastTrigger4 = document.getElementById('liveToastBtn4')
+            const toastLiveExample4 = document.getElementById('liveToast4')
+            const toastTrigger5 = document.getElementById('liveToastBtn5')
+            const toastLiveExample5 = document.getElementById('liveToast5')
+            const toastTrigger6 = document.getElementById('liveToastBtn6')
+            const toastLiveExample6 = document.getElementById('liveToast6')
+            const toastTrigger7 = document.getElementById('liveToastBtn7')
+            const toastLiveExample7 = document.getElementById('liveToast7')
+            const input = document.querySelector("#input")
+
+            if (toastTrigger1) {
+                const toastBootstrap1 = bootstrap.Toast.getOrCreateInstance(toastLiveExample1)
+                toastTrigger1.addEventListener('click', () => {
+                    toastBootstrap1.show()
+                })
+            }
+
+            if (toastTrigger2) {
+                const toastBootstrap2 = bootstrap.Toast.getOrCreateInstance(toastLiveExample2)
+                toastTrigger2.addEventListener('click', () => {
+                    toastBootstrap2.show()
+                })
+            }
+
+            if (toastTrigger3) {
+                const toastBootstrap3 = bootstrap.Toast.getOrCreateInstance(toastLiveExample3)
+                toastTrigger3.addEventListener('click', () => {
+                    toastBootstrap3.show()
+                })
+            }
+
+            if (toastTrigger4) {
+                const toastBootstrap4 = bootstrap.Toast.getOrCreateInstance(toastLiveExample4)
+                toastTrigger4.addEventListener('click', () => {
+                    toastBootstrap4.show()
+                })
+            }
+
+            if (toastTrigger5) {
+                const toastBootstrap5 = bootstrap.Toast.getOrCreateInstance(toastLiveExample5)
+                toastTrigger5.addEventListener('click', () => {
+                    toastBootstrap5.show()
+                })
+            }
+
+            if (toastTrigger6) {
+                const toastBootstrap6 = bootstrap.Toast.getOrCreateInstance(toastLiveExample6)
+                toastTrigger6.addEventListener('click', () => {
+                    toastBootstrap6.show()
+                })
+            }
+
+            if (toastTrigger7) {
+                const toastBootstrap7 = bootstrap.Toast.getOrCreateInstance(toastLiveExample7)
+                toastTrigger7.addEventListener('click', () => {
+                    toastBootstrap7.show()
+                })
+            }
+
+            myModal.addEventListener('shown.bs.modal', () => {
+                myInput.focus()
+            })
+        </script>
+    </body>
+</html>
