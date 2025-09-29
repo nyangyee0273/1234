@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <title>타이핑 게임 프로젝트</title>
     <style>
         .wrap {
@@ -65,9 +67,7 @@
             <h1>타이핑 마스터</h1>
         </header>
     
-        <h1 class="text">
-            타이핑 할 글씨
-        </h1>
+        <h1 class="text">a</h1>
     
         <input type="text" placeholder="입력하세요">
     
@@ -103,12 +103,18 @@
 
         const startBtn = document.querySelector("button")
         const leftTime = document.querySelector(".time")
+        const input = document.querySelector("input")
+        const typing = document.querySelector(".text")
+        const score = document.querySelector(".score")
+
+        let timeSetting = 10
         let isStarted = false
+        let index
 
         startBtn.addEventListener("click", () => {
             console.log("게임 시작 버튼 눌림")
             
-            leftTime.textContent = 5
+            leftTime.textContent = timeSetting
             
             if (!isStarted) {
                 isStarted = true
@@ -125,8 +131,30 @@
             }
         })
 
-        document.addEventListener("keypress", (e) => {
-            console.log(e)
+        input.addEventListener("input", () => {
+            if (input.value == typing.textContent && isStarted) {
+                score.textContent = Number(score.textContent) + 1
+                leftTime.textContent = timeSetting
+                
+                index = Math.floor(Math.random() * text.length)
+                typing.textContent = text[index]
+                input.value = ""
+
+                Toastify({
+                    text: "정답!",
+                    duration: 3000,
+                    destination: "https://github.com/apvarun/toastify-js",
+                    newWindow: true,
+                    close: true,
+                    gravity: "bottom", // `top` or `bottom`
+                    position: "left", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                        background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    },
+                    onClick: function(){} // Callback after click
+                }).showToast();
+            }
         })
     </script>
 </body>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <title>08 이시현</title>
+        <style>
+            @font-face {
+                font-family: 'NexonMaplestory';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff');
+                font-weight: 300;
+                font-display: swap;
+            }
+
+            * {
+                font-family: 'NexonMaplestory';
+            }
+
+            header {
+                background-image: url("https://media.discordapp.net/attachments/1053790583526801438/1414768694709588039/Full_Sissela_04.png?ex=68c0c585&is=68bf7405&hm=b800427c3be7caa9f09117a77dc89368b2e8047ffc9e463ff7fd51099d182007&=&format=webp&quality=lossless&width=1980&height=1980");
+                background-position: 50%;
+                background-position-y: 20%;
+                background-size: 50%;
+                background-repeat: no-repeat;
+                transition: all 0.5s ease-in-out;
+            }
+
+            header:hover {
+                background-position-y: 14%;
+                background-size: 75%;
+            }
+
+            .body-container {
+                margin-bottom: 30px;
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            h3 {
+                text-align: center;
+            }
+
+            #right {
+                position: fixed;
+                left: 65%;
+            }
+
+            .card {
+                margin-bottom: 30px;
+            }
+
+            .card h4 {
+                text-align: center;
+            }
+
+            #inner {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            #inner2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                align-items: center;
+            }
+
+            #inner2 {
+                text-align: center;
+            }
+
+            #inner div {
+                margin: 0 auto;
+            }
+
+            #lang img {
+                width: 50px;
+            }
+
+            #games {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                align-items: center;
+                gap: 30px;
+            }
+
+            #games div {
+                text-align: center;
+            }
+
+            #games > div > button {
+                width: 100px;
+            }
+
+            #link:link {
+                text-decoration: none;
+            }
+
+            #link:visited {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">About me</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page header with logo and tagline-->
+        <header class="py-5 bg-light border-bottom mb-5">
+            <div class="container">
+                <div class="text-center my-5">
+                    <h1 class="fw-bolder">포트폴리오</h1>
+                </div>
+            </div>
+        </header>
+        <!-- Page content-->
+        <div class="body-container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+                        <div id="item-1" class="card">
+                            <div class="card-body">
+                                <h4 class="card-title mb-2">About me</h4>
+                                <p>이름 : 이시현</p>
+                                <p>나이 : 18세</p>
+                                <p>학력 : 경복고 재적 중</p>
+                            </div>
+                        </div>
+                        <details>
+                            <summary>자기 소개 보기</summary>
+                            <br>
+                            <div id="item-1-1" class="card">
+                                <div class="card-body">
+                                    <h4>자기소개</h4>
+                                    <p>혹시 게임을 해보신 적 있으신가요? 저는 게임을 안 좋아하는 사람은 없다고 생각합니다. 게임을 하다보면 높은 티어를 달아보고 싶은 마음이 들기 마련입니다. 저는 그 경험이 있습니다. 게임에서 높은 티어를 달성해 보았듯이 컴퓨터 코딩 쪽에서도 인정을 받기 위해 이 쪽에 꿈을 가지게 되었습니다.</p>
+                                </div>
+                            </div>
+                        </details>
+                        <br>
+                        <div id="item-2" class="card">
+                            <div class="card-body">
+                                <h4 class="card-title mb-2">프로그래밍 언어</h4>
+                                <div id="inner">
+                                    <div>
+                                        <p>사용하는 언어 : </p>
+                                    </div>
+                                    <div id="lang">
+                                        <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" alt="Html"> , <img src="https://i.namu.wiki/i/DLvI3H3jjaK2ONvOQZCzadfWeMkXkNRamQJr_O4oY7vah_ALG9oA6qqP-3DFbqs_fyUDHO7oIrtosaxe1jGX1A.svg" alt="CSS"> , <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7OrtM7FfDgFfgOmRqL4R__bU5cjx1ltwy1A&s" alt="JavaScript"> , <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" alt="Python"> , <img src="https://i.namu.wiki/i/KcqDuQYTxNpUcLIMZTg28QXse0XiWx1G7K68kYYCo1GuhoHmhB_V8Qe9odGGt0BH9-0nQZTN53WXTNpDmwVfWQ.svg" alt="C"> , <img src="https://i.namu.wiki/i/MuCO_ocla-FyadGnRZytkRLggQOcqxv_hXNjN7aYXDOPivIChJNdiRXp6vwSXbM6GcUL3pVTL-5U5TKQ0f1YhA.svg" alt="Java"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="item-3">
+                            <h4 style="text-align: center;">내가 한 활동</h4>
+                        </div>
+                        <br>
+                        <div id="item-3-1" class="card">
+                            <div class="card-body" style="text-align: center;">
+                                <h4>음원 사이트 만들기</h4>
+                                <img src="https://media.discordapp.net/attachments/1053790583526801438/1415199611743895654/image.png?ex=68c256d8&is=68c10558&hm=05828a30146101abb5edbeb83e8870356446188e74e14d06daacd0200c8769f6&=&format=webp&quality=lossless&width=903&height=924" alt="" style="width: 100%; margin: 30px 0;">
+                                <button class="btn btn-primary" id="liveToastBtn1">정보 보기</button>
+
+                                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                    <div id="liveToast1" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="500">
+                                        <div class="toast-header">
+                                            <img src="" class="rounded me-2" alt="maple" style="width: 30px; height: 30px;">
+                                            <strong class="me-auto">음원 사이트 만들기</strong>
+                                            <small>1 sec ago</small>
+                                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                        </div>
+                                        <div class="toast-body">
+                                            기능은 구현되지 않았지만 디자인만 하기도 빡셌던 수행평가
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="item-3-2" class="card">
+                            <div class="card-body" style="text-align: center;">
+                                <h4>날씨 앱 만들기</h4>
+                                <img src="https://media.discordapp.net/attachments/1053790583526801438/1415199740102049932/image.png?ex=68c256f7&is=68c10577&hm=3f1322de2144fc8b2962c847249f76e46f71544ca47ed285f8b293cc9f20b4fd&=&format=webp&quality=lossless&width=825&height=422" alt="" style="width: 100%; margin: 30px 0;">
+                                <button class="btn btn-primary" id="liveToastBtn2">정보 보기</button>
+
+                                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                    <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="500">
+                                        <div class="toast-header">
+                                            <img src="" class="rounded me-2" alt="maple" style="width: 30px; height: 30px;">
+                                            <strong class="me-auto">날씨 앱 만들기</strong>
+                                            <small>1 sec ago</small>
+                                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                        </div>
+                                        <div class="toast-body">
+                                            할 수 있었던 기능을 다 넣어봤던 수행평가
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <h3>TMI</h3>
+                        <br>
+                        <div id="item-4" class="card">
+                            <div class="card-body">
+                                <h4>즐겨하는 게임</h4>
+                                <div id="games">
+                                    <div>
+                                        <p>League of Legends</p>
+                                        <a tabindex="0" class="btn btn-lg btn-info" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-custom-class="custom-popover" data-bs-title="League of Legends" data-bs-content="진짜 레전드들의 모임">한줄 평</a>
+                                    </div>
+                                    <div>
+                                        <p>Valorant</p>
+                                        <a tabindex="0" class="btn btn-lg btn-info" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-custom-class="custom-popover" data-bs-title="Valorant" data-bs-content="호두까기가 아닌 대가리깨기 게임">한줄 평</a>
+                                    </div>
+                                    <div>
+                                        <p>Eternal Return</p>
+                                        <a tabindex="0" class="btn btn-lg btn-info" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-custom-class="custom-popover" data-bs-title="Eternal Return" data-bs-content="이터널 리턴 지금 바로 접속하세요!">한줄 평</a>
+                                    </div>
+                                    <div>
+                                        <p>A Dance of Fire and Ice</p>
+                                        <a tabindex="0" class="btn btn-lg btn-info" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-custom-class="custom-popover" data-bs-title="A Dance of Fire and Ice" data-bs-content="마법진 쾌감 개지림">한줄 평</a>
+                                    </div>
+                                    <div>
+                                        <p>Honkai : Star Rail</p>
+                                        <a tabindex="0" class="btn btn-lg btn-info" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-custom-class="custom-popover" data-bs-title="Honkai : Star Rail" data-bs-content="캐릭터 진짜 이쁨">한줄 평</a>
+                                    </div>
+                                    <div>
+                                        <p>Wuthering Waves</p>
+                                        <a tabindex="0" class="btn btn-lg btn-info" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-custom-class="custom-popover" data-bs-title="Wuthering Waves" data-bs-content="명조 솔직히 개노잼">한줄 평</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="item-4-1" class="card">
+                            <div class="card-body">
+                                <h4>리그 오브 레전드</h4>
+                                <div id="inner2">
+                                    <div>최고 티어</div>
+                                    <div>최애 챔피언</div>
+                                    <div>전적 보기</div>
+                                    <div><img src="https://opgg-static.akamaized.net/images/medals_new/gold.png?image=q_auto:good,f_webp,w_144&v=1757321617" alt="gold" style="height: 200px;"></div>
+                                    <div>파이크 , 애쉬 , 아칼리 , 이렐리아</div>
+                                    <div><a href="https://op.gg/ko/lol/summoners/kr/%EC%9A%94%EC%95%84%EC%A0%95-Efina" target="_blank" id="link">보러 가기</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="item-4-2" class="card">
+                            <div class="card-body">
+                                <h4>발로란트</h4>
+                                <div id="inner2">
+                                    <div>최고 티어</div>
+                                    <div>최애 요원</div>
+                                    <div>전적 보기</div>
+                                    <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaxoG-JiVtc9IhMY6uvI657mN4DG0Ijvm5Zw&s" alt="" style="height: 200px;"></div>
+                                    <div>제트 , 레이나 , 클로브 , 킬조이 , 사이퍼 , 체임버</div>
+                                    <div><a href="https://tracker.gg/valorant/profile/riot/%EC%9A%94%EC%95%84%EC%A0%95%23Efina/overview?platform=pc&playlist=unrated&season=5adc33fa-4f30-2899-f131-6fba64c5dd3a" target="_blank" id="link">보러 가기</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="item-4-3" class="card">
+                            <div class="card-body">
+                                <h4>이터널 리턴</h4>
+                                <div id="inner2">
+                                    <div>최고 티어</div>
+                                    <div>최애 실험체</div>
+                                    <div>전적 보기</div>
+                                    <div><img src="https://i.namu.wiki/i/fUJCG-pcanICAn2qaV7IL4VznKru4azoK2qYIsT9O6sobAWGOMp2CnuSOGyns5uJRGjYdkcg1n-e5YXPcDGIfA.webp" alt="" style="height: 200px;"></div>
+                                    <div>시셀라</div>
+                                    <div><a href="https://dak.gg/er/players/%EB%B3%91%EC%95%BD%ED%95%9C%EC%8B%9C%EC%85%80%EB%9D%BC" target="_blank" id="link">보러 가기</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="item-4-4" class="card" style="text-align: center;">
+                            <div class="card-body">
+                                <h4>얼음과 불의 춤</h4>
+                                <img src="https://i.ytimg.com/vi/eqosDpXvJ-I/maxresdefault.jpg" alt="" style="width: 90%;">
+                                <p>백문이 불허일견</p>
+                                <a href="https://www.youtube.com/watch?v=eqosDpXvJ-I" id="link" target="_blank">보러 가기</a>
+                                <p style="color: rgb(200, 200, 200);">출처 : 헤깐 유튜브</p>
+                            </div>
+                        </div>
+                        <div id="item-4-5" class="card">
+                            <div class="card-body">
+                                <h4>붕괴 : 스타레일</h4>
+                                <img src="https://i.namu.wiki/i/K9fvWF5RcJ9cKvwB007Vwmgu8Vp2H2bmwmZOoefr_dmNdSf301FGQLEEcpLf9Oaf-Iz3d3vmR9L7k_lkMcSpqEmnluhyRI_ns8KXzOloqqm9xWpmMINfY4gFNkatLI9PL3k-_DREwYZIDNc9eLUp-Q.webp" alt="" style="width: 100%;">
+                            </div>
+                        </div>
+                        <div id="item-4-6" class="card">
+                            <div class="card-body">
+                                <h4>명조</h4>
+                                <img src="https://resources.vortexgaming.io/upload/post/2024/10/03/e97213fa80484f4a97dbd52221fe3e0d.jpg" alt="" style="width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" id="right">
+                    <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link" href="#item-1">About me</a>
+                            <nav class="nav nav-pills flex-column">
+                                <a href="#item-1-1" class="nav-link ms-3 my-1">Self Introduction</a>
+                            </nav>
+                            <a class="nav-link" href="#item-2">programming Lang</a>
+                            <a class="nav-link" href="#item-3">What I did</a>
+                            <nav class="nav nav-pills flex-column">
+                                <a class="nav-link ms-3 my-1" href="#item-3-1">Music Streaming Site</a>
+                                <a class="nav-link ms-3 my-1" href="#item-3-2">Weather App</a>
+                            </nav>
+                            <a class="nav-link" href="#item-4">Favorite Games</a>
+                            <nav class="nav nav-pills flex-column">
+                                <a class="nav-link ms-3 my-1" href="#item-4-1">League of Legends</a>
+                                <a class="nav-link ms-3 my-1" href="#item-4-2">Valorant</a>
+                                <a class="nav-link ms-3 my-1" href="#item-4-3">Eternal Return</a>
+                                <a class="nav-link ms-3 my-1" href="#item-4-4">A Dance of Fire and Ice</a>
+                                <a class="nav-link ms-3 my-1" href="#item-4-5">Honkai : Star Rail</a>
+                                <a class="nav-link ms-3 my-1" href="#item-4-6">Wuthering Waves</a>
+                            </nav>
+                        </nav>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; My Portfolio 2025</p>
+                <p class="m-0 text-center text-white">출처 : Bootstrap</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+        <script>
+            const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+            const toastTrigger1 = document.getElementById('liveToastBtn1')
+            const toastLiveExample1 = document.getElementById('liveToast1')
+            const toastTrigger2 = document.getElementById('liveToastBtn2')
+            const toastLiveExample2 = document.getElementById('liveToast2')
+            const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+            const popover = new bootstrap.Popover('.popover-dismiss', {
+                trigger: 'focus'
+            })
+
+
+            if (toastTrigger1) {
+                const toastBootstrap1 = bootstrap.Toast.getOrCreateInstance(toastLiveExample1)
+                toastTrigger1.addEventListener('click', () => {
+                    toastBootstrap1.show()
+                })
+            }
+
+            if (toastTrigger2) {
+                const toastBootstrap2 = bootstrap.Toast.getOrCreateInstance(toastLiveExample2)
+                toastTrigger2.addEventListener('click', () => {
+                    toastBootstrap2.show()
+                })
+            }
+        </script>
+    </body>
+</html>
