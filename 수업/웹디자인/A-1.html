@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUST 쇼핑몰</title>
+    <style>
+        * {
+            color: #333333;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 100%;
+        }
+
+        header {
+            width: 1200px;
+            height: 100px;
+            background-color: coral;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 200px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu li {
+            width: 150px;
+            height: 50px;
+            background-color: steelblue;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .sub_menu li {
+            background-color: steelblue;
+        }
+
+        li:hover {
+            background-color: chartreuse;
+        }
+
+        .slide_container {
+            width: 1200px;
+            height: 300px;
+            background-color: darkgoldenrod;
+            margin: 0 auto;
+        }
+
+        .contents {
+            width: 1200px;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        .contents div {
+            width: 400px;
+            height: 200px;
+            background-color: steelblue;
+        }
+
+        .footer {
+            width: 1200px;
+            height: 100px;
+            display: flex;
+            margin: 0 auto;
+            background-color: grayscale;
+        }
+
+        .logo2 {
+            width: 200px;
+            background-color: bisque;
+        }
+
+        .copyright {
+            width: 800px;
+            background-color: aquamarine;
+        }
+
+        .sns {
+            width: 200px;
+            background-color: coral;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="logo"></div>
+            <ul class="menu">
+                <li><a href="">탑</a>
+                    <ul class="sub_menu">
+                        <li><a href="">블라우스</a></li>
+                        <li><a href="">티</a></li>
+                        <li><a href="">셔츠</a></li>
+                        <li><a href="">니트</a></li>
+                    </ul>
+                </li>
+                <li><a href="">아우터</a>
+                    <ul class="sub_menu">
+                        <li><a href="">자켓</a></li>
+                        <li><a href="">코트</a></li>
+                        <li><a href="">가디건</a></li>
+                        <li><a href="">머플러</a></li>
+                    </ul>
+                </li>
+                <li><a href="">팬츠</a>
+                    <ul class="sub_menu">
+                        <li><a href="">청바지</a></li>
+                        <li><a href="">짧은바지</a></li>
+                        <li><a href="">긴바지</a></li>
+                        <li><a href="">레깅스</a></li>
+                    </ul>
+                </li>
+                <li><a href="">악세서리</a>
+                    <ul class="sub_menu">
+                        <li><a href="">귀고리</a></li>
+                        <li><a href="">목걸이</a></li>
+                        <li><a href="">반지</a></li>
+                        <li><a href="">팔찌</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+        <section class="slide_container"></section>
+        <section class="contents">
+            <div class="cont1">공지사항 갤러리</div>
+            <div class="cont2">배너</div>
+            <div class="cont3">바로가기</div>
+        </section>
+        <footer class="footer">
+            <div class="logo2">logo</div>
+            <div class="copyright">Copyright</div>
+            <div class="sns">SNS</div>
+        </footer>
+    </div>
+</body>
+</html>
